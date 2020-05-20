@@ -2,6 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { H1 } from "./page-elements"
 import MainMenu from '../components/Menu/MainMenu'
+import { AiOutlineMenuUnfold } from 'react-icons/ai';
 
 import styled from 'styled-components'
 const StyledHeader = styled.header`
@@ -22,7 +23,7 @@ const Header = ({ siteTitle, ShowMenu, setShowMenu }) => {
     <>
       <StyledHeader>
         <H1 style={{ margin: 0 }}> {siteTitle} </H1>
-        {!ShowMenu ? <button onClick={toggle}>Menu</button> : null}
+        {!ShowMenu ? <AiOutlineMenuUnfold onClick={toggle} /> : null}
         {ShowMenu ? <MainMenu ShowMenu={ShowMenu} setShowMenu={setShowMenu} /> : null}
       </StyledHeader >
     </>
