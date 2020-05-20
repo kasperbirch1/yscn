@@ -1,0 +1,27 @@
+.parallax-bg {
+    background-image: url("https://images.pexels.com/photos/1036856/pexels-photo-1036856.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.swiper-pagination-bullet-active {
+    background: wheat;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    color: wheat;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after
+ {
+    opacity: .5;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+  
