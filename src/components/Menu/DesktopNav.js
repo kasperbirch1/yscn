@@ -54,7 +54,7 @@ const StyledHeader = styled.header`
     z-index: 10;
     padding: 0.5rem;
     transition: background 300ms;
-    background: ${({ background }) => (background ? "#000" : "linear-gradient( rgb(0, 0, 0, .5),rgba(255, 255, 255, 0))")};
+    background: ${({ background }) => (background ? "#000" : "linear-gradient(to bottom,#25211e 0,rgba(37,33,30,0) 100%)")};
     color: white;
     ul {
       max-width: 800px;
