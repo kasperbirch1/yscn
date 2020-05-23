@@ -1,31 +1,15 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { H1 } from "./page-elements"
-import MainMenu from '../components/Menu/MainMenu'
-import { AiOutlineMenuUnfold } from 'react-icons/ai';
+import DesktopNavMenu from '../components/Menu/DesktopNav'
+import MobileNavMenu from '../components/Menu/MobileNav'
 
-import styled from 'styled-components'
-const StyledHeader = styled.header`
-  padding: 1rem .5rem;
-  background-image: linear-gradient( rgb(0, 0, 0, .5),rgba(255, 255, 255, 0));
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-`
+
 
 const Header = ({ siteTitle, ShowMenu, setShowMenu }) => {
-  function toggle() {
-    setShowMenu(!ShowMenu);
-  }
-
   return (
     <>
-      <StyledHeader>
-        <H1 style={{ margin: 0 }}> {siteTitle} </H1>
-        {!ShowMenu ? <AiOutlineMenuUnfold onClick={toggle} /> : null}
-        {ShowMenu ? <MainMenu ShowMenu={ShowMenu} setShowMenu={setShowMenu} /> : null}
-      </StyledHeader >
+      <DesktopNavMenu />
+      <MobileNavMenu />
     </>
   )
 }
