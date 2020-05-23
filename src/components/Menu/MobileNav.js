@@ -30,7 +30,7 @@ const MobileNavMenu = ({ siteTitle, menuLinks }) => {
       <MenuIconContainer>
         <H1>{siteTitle}</H1>
         {menuOpen ?
-          <AiOutlineMenuUnfold style={{ zIndex: '11', fontSize: '1.5rem' }} menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)} />
+          <AiOutlineMenuUnfold style={{ zIndex: '11', fontSize: '1.5rem', color: 'black' }} menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)} />
           :
           <AiOutlineMenuFold style={{ zIndex: '11', fontSize: '1.5rem' }} menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)} />
         }
@@ -80,7 +80,7 @@ const MenuLinks = styled.nav`
   justify-content: center;
   align-items: center;
   display: flex;
-  background: blue;
+  background: white;
   position: absolute;
   z-index: 5;
   top: 0;
@@ -104,7 +104,7 @@ const MenuLinks = styled.nav`
 
       a {
         text-decoration: none;
-        color: white;
+        color: black;
       }
     }
   }
