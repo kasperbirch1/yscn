@@ -1,20 +1,38 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { breakpoints } from "../../theme/breakpoints"
+import { AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai'
 
 const MobileNavMenu = () => {
   const [menuOpen, toggleMenuOpen] = useState(false)
+  const [background, setBackground] = useState(false)
+  const navRef = useRef()
+
+  navRef.current = background
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 2
+      if (navRef.current !== show) {
+        setBackground(show)
+      }
+    }
+    document.addEventListener("scroll", handleScroll)
+
+    return () => {
+      document.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   return (
-    <MenuBar>
+    <MenuBar background={background}>
       <MenuIconContainer>
         <h1>YSCN</h1>
-        <MenuIcon menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)}>
-          <div />
-          <div />
-          <div />
-        </MenuIcon>
+        {menuOpen ?
+          <AiOutlineMenuUnfold style={{ zIndex: '11' }} menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)} />
+          :
+          <AiOutlineMenuFold style={{ zIndex: '11' }} menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)} />
+        }
       </MenuIconContainer>
       <MenuLinks menuOpen={menuOpen}>
         <ul>
@@ -42,10 +60,11 @@ const MenuBar = styled.header`
   @media ${breakpoints.sm} {
     display: none;
   }
+  background: ${({ background }) => (background ? "#000" : "linear-gradient( rgb(0, 0, 0, .5),rgba(255, 255, 255, 0))")};
+  color: white;
   height: 3rem;
   position: fixed;
   width: 100%;
-  background-image: linear-gradient( rgb(0, 0, 0, .5),rgba(255, 255, 255, 0));
   border-bottom: "blue";
   z-index: 10;
   display: flex;
@@ -59,44 +78,6 @@ const MenuIconContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
-
-const MenuIcon = styled.button`
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 2rem;
-  /* outline: thin-dotted; */
-  outline: none;
-  z-index: 11;
-
-  div {
-    width: 2rem;
-    height: 0.25rem;
-    background: ${({ menuOpen }) => (menuOpen ? "red" : "black")};
-    border-radius: 10px;
-    transform-origin: 1px;
-    transition: opacity 300ms, transform 300ms;
-
-    :first-child {
-      transform: ${({ menuOpen }) =>
-    menuOpen ? "rotate(45deg)" : "rotate(0)"};
-    }
-
-    :nth-child(2) {
-      opacity: ${({ menuOpen }) => (menuOpen ? "0" : "1")};
-      transform: ${({ menuOpen }) =>
-    menuOpen ? "translateX(-20px)" : "translateX(0)"};
-    }
-
-    :nth-child(3) {
-      transform: ${({ menuOpen }) =>
-    menuOpen ? "rotate(-45deg)" : "rotate(0)"};
-    }
-  }
 `
 
 const MenuLinks = styled.nav`
