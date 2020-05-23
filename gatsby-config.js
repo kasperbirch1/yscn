@@ -3,6 +3,24 @@ module.exports = {
     title: `YSCN`,
     description: `YSCN® Officielt Site | Shop den Nye Kollektion‎`,
     author: `@YSCN`,
+    menuLinks: [
+      {
+        name: 'home',
+        link: '/'
+      },
+      {
+        name: 'about',
+        link: '/about'
+      },
+      {
+        name: 'shop',
+        link: '/shop'
+      },
+      {
+        name: 'contact',
+        link: '/contact'
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-styled-components`,

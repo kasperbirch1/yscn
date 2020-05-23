@@ -7,16 +7,19 @@
 
 import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import React from "react"
 import Header from "./header"
 
 const Layout = ({ children }) => {
-  const [ShowMenu, setShowMenu] = useState(false);
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          menuLinks {
+            link
+            name
+          }
         }
       }
     }
@@ -24,7 +27,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} ShowMenu={ShowMenu} setShowMenu={setShowMenu} />
+      <Header siteTitle={data.site.siteMetadata.title} menuLinks={data.site.siteMetadata.menuLinks} />
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with

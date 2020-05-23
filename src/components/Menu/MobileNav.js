@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { breakpoints } from "../../theme/breakpoints"
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai'
 
-const MobileNavMenu = () => {
+const MobileNavMenu = ({ siteTitle, menuLinks }) => {
   const [menuOpen, toggleMenuOpen] = useState(false)
   const [background, setBackground] = useState(false)
   const navRef = useRef()
@@ -27,7 +27,7 @@ const MobileNavMenu = () => {
   return (
     <MenuBar background={background}>
       <MenuIconContainer>
-        <h1>YSCN</h1>
+        <h1>{siteTitle}</h1>
         {menuOpen ?
           <AiOutlineMenuUnfold style={{ zIndex: '11' }} menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)} />
           :
@@ -36,18 +36,13 @@ const MobileNavMenu = () => {
       </MenuIconContainer>
       <MenuLinks menuOpen={menuOpen}>
         <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/merch">Merch</Link>
-          </li>
-          <li>
-            <Link to="/about">Contact</Link>
-          </li>
+          {menuLinks.map(link => {
+            return (
+              <li key={link.name}>
+                <Link to={link.link}>{link.name}</Link>
+              </li>
+            )
+          })}
         </ul>
       </MenuLinks>
     </MenuBar>
@@ -68,7 +63,6 @@ const MenuBar = styled.header`
   border-bottom: "blue";
   z-index: 10;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 `
 

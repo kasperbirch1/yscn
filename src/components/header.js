@@ -5,11 +5,11 @@ import MobileNavMenu from '../components/Menu/MobileNav'
 
 
 
-const Header = ({ siteTitle, ShowMenu, setShowMenu }) => {
+const Header = ({ siteTitle, menuLinks }) => {
   return (
     <>
-      <DesktopNavMenu />
-      <MobileNavMenu />
+      <DesktopNavMenu siteTitle={siteTitle} menuLinks={menuLinks} />
+      <MobileNavMenu siteTitle={siteTitle} menuLinks={menuLinks} />
     </>
   )
 }

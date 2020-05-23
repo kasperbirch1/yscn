@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { breakpoints } from "../../theme/breakpoints"
 
-const DesktopNavMenu = () => {
+const DesktopNavMenu = ({ siteTitle, menuLinks }) => {
   const [background, setBackground] = useState(false)
   const navRef = useRef()
 
@@ -24,19 +24,15 @@ const DesktopNavMenu = () => {
 
   return (
     <StyledHeader background={background}>
+      <h1>{siteTitle}</h1>
       <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/merch">Merch</Link>
-        </li>
-        <li>
-          <Link to="/about">Contact</Link>
-        </li>
+        {menuLinks.map(link => {
+          return (
+            <li key={link.name}>
+              <Link to={link.link}>{link.name}</Link>
+            </li>
+          )
+        })}
       </ul>
     </StyledHeader>
   )
@@ -47,16 +43,20 @@ export default DesktopNavMenu
 const StyledHeader = styled.header`
   display: none;
   @media ${breakpoints.sm} {
-    display: flex;
-    position: fixed;
     width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
     top: 0;
     z-index: 10;
     padding: 0.5rem;
     transition: background 300ms;
     background: ${({ background }) => (background ? "#000" : "linear-gradient( rgb(0, 0, 0, .5),rgba(255, 255, 255, 0))")};
-
+    color: white;
     ul {
+      max-width: 800px;
       display: flex;
       align-items: center;
       width: 100%;
