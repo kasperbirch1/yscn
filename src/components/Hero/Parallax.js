@@ -4,7 +4,7 @@ import "swiper/css/swiper.css"
 import "./Parallax.css"
 import styled from "styled-components"
 const StyledSwiperArticle = styled.article`
-    padding: 2rem;
+    padding: 4rem 1rem;
     color: wheat;
     h2 {
         font-size: 2.5rem;
