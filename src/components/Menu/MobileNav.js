@@ -29,9 +29,9 @@ const MobileNavMenu = ({ siteTitle, menuLinks }) => {
       <MenuIconContainer>
         <h1>{siteTitle}</h1>
         {menuOpen ?
-          <AiOutlineMenuUnfold style={{ zIndex: '11' }} menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)} />
+          <AiOutlineMenuUnfold style={{ zIndex: '11', fontSize: '2rem' }} menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)} />
           :
-          <AiOutlineMenuFold style={{ zIndex: '11' }} menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)} />
+          <AiOutlineMenuFold style={{ zIndex: '11', fontSize: '2rem' }} menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)} />
         }
       </MenuIconContainer>
       <MenuLinks menuOpen={menuOpen}>
