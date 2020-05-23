@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { breakpoints } from "../../theme/breakpoints"
+import { H1 } from '../page-elements/h1'
 
 const DesktopNavMenu = ({ siteTitle, menuLinks }) => {
   const [background, setBackground] = useState(false)
@@ -24,7 +25,7 @@ const DesktopNavMenu = ({ siteTitle, menuLinks }) => {
 
   return (
     <StyledHeader background={background}>
-      <h1>{siteTitle}</h1>
+      <H1>{siteTitle}</H1>
       <ul>
         {menuLinks.map(link => {
           return (
