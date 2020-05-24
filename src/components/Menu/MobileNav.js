@@ -100,7 +100,7 @@ const MenuLinks = styled.nav`
 
     li {
       list-style: none;
-      border-bottom: 1px solid black;
+      border-bottom: 2px solid black;
       display: block;
       text-align: center;
       width: 100%;
