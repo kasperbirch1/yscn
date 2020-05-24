@@ -30,9 +30,9 @@ const MobileNavMenu = ({ siteTitle, menuLinks }) => {
       <MenuIconContainer>
         <H1>{siteTitle}</H1>
         {menuOpen ?
-          <AiOutlineMenuUnfold style={{ zIndex: '11', fontSize: '1.5rem', color: 'black' }} menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)} />
+          <AiOutlineMenuUnfold style={{ zIndex: '11', fontSize: '1.5rem', color: 'black' }} onClick={() => toggleMenuOpen(!menuOpen)} />
           :
-          <AiOutlineMenuFold style={{ zIndex: '11', fontSize: '1.5rem' }} menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)} />
+          <AiOutlineMenuFold style={{ zIndex: '11', fontSize: '1.5rem' }} onClick={() => toggleMenuOpen(!menuOpen)} />
         }
       </MenuIconContainer>
       <MenuLinks menuOpen={menuOpen}>
@@ -40,7 +40,7 @@ const MobileNavMenu = ({ siteTitle, menuLinks }) => {
           {menuLinks.map(link => {
             return (
               <li key={link.name}>
-                <Link to={link.link}>{link.name}</Link>
+                <Link to={link.link} onClick={() => toggleMenuOpen(!menuOpen)}>{link.name}</Link>
               </li>
             )
           })}
@@ -102,11 +102,11 @@ const MenuLinks = styled.nav`
       list-style: none;
       border-bottom: 1px solid black;
       display: block;
-        text-align: center;
+      text-align: center;
       width: 100%;
 
       a {
-        font-size: 3rem;
+        font-size: 2rem;
         text-transform: uppercase;
         text-decoration: none;
         color: black;
