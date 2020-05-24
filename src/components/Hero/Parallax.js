@@ -2,10 +2,17 @@ import React from 'react';
 import Swiper from 'react-id-swiper';
 import "swiper/css/swiper.css"
 import "./Parallax.css"
+import { breakpoints } from '../../theme/breakpoints'
 import styled from "styled-components"
+
 const StyledSwiperArticle = styled.article`
+  @media ${breakpoints.sm} {
     height: 70vh;
     padding: 4rem 1rem;
+
+  }
+    height: 70vh;
+    padding: 10rem 1rem 2rem;
     color: white;
     background-color:rgba(0,0,0,0.3);
     h2 {
