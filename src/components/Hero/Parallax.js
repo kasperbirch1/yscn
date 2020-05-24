@@ -8,7 +8,7 @@ import styled from "styled-components"
 const StyledSwiperArticle = styled.article`
     display: grid;
     place-content: end center;
-    height: 90vh;
+    height: 80vh;
     padding: 2rem;
     color: white;
     background-color:rgba(0,0,0,0.3);
