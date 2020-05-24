@@ -76,15 +76,14 @@ const MenuIconContainer = styled.div`
 `
 
 const MenuLinks = styled.nav`
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background: white;
   position: absolute;
-  z-index: 5;
   top: 0;
   right: 0;
+  z-index: 5;
+  display: grid;
+  place-content: center;
+  align-items: center;
+  background: white;
   height: 100vh;
   width: 100%;
   transition: transform 300ms;
@@ -94,15 +93,21 @@ const MenuLinks = styled.nav`
   ul {
     width: 100%;
     margin: 0;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    display: flex;
 
     li {
       list-style: none;
+      border-bottom: 1px solid black;
+      display: block;
+        text-align: center;
+      width: 100%;
 
       a {
+        font-size: 3rem;
+        text-transform: uppercase;
         text-decoration: none;
         color: black;
       }
