@@ -37,6 +37,7 @@ const MobileNavMenu = ({ siteTitle, menuLinks }) => {
       </MenuIconContainer>
       <MenuLinks menuOpen={menuOpen}>
         <ul>
+          <H1 style={{ color: 'black', marginBottom: '2rem' }}>{siteTitle}</H1>
           {menuLinks.map(link => {
             return (
               <li key={link.name}>
