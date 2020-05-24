@@ -6,7 +6,8 @@ import styled from "styled-components"
 const StyledSwiperArticle = styled.article`
     height: 70vh;
     padding: 4rem 1rem;
-    color: wheat;
+    color: white;
+    background-color:rgba(0,0,0,0.3);
     h2 {
         font-size: 2.5rem;
     }
