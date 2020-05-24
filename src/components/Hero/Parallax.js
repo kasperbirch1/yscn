@@ -6,13 +6,10 @@ import { breakpoints } from '../../theme/breakpoints'
 import styled from "styled-components"
 
 const StyledSwiperArticle = styled.article`
-  @media ${breakpoints.sm} {
-    height: 50vh;
-  }
     display: grid;
     place-content: end center;
-    height: 100vh;
-    padding:2rem;
+    height: 90vh;
+    padding: 2rem;
     color: white;
     background-color:rgba(0,0,0,0.3);
     h2 {
