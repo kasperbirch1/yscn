@@ -7,12 +7,12 @@ import styled from "styled-components"
 
 const StyledSwiperArticle = styled.article`
   @media ${breakpoints.sm} {
-    height: 70vh;
-    padding: 4rem 1rem;
-
+    height: 50vh;
   }
-    height: 70vh;
-    padding: 10rem 1rem 2rem;
+    display: grid;
+    place-content: end center;
+    height: 100vh;
+    padding:2rem;
     color: white;
     background-color:rgba(0,0,0,0.3);
     h2 {
