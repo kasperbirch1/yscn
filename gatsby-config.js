@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `YSCN`,
+    title: `NONNAKED`,
     description: `YSCN® Officielt Site | Shop den Nye Kollektion‎`,
     author: `@YSCN`,
     menuLinks: [
