@@ -4,6 +4,8 @@ import "swiper/css/swiper.css"
 import "./Parallax.css"
 import { breakpoints } from '../../theme/breakpoints'
 import styled from "styled-components"
+import { PrimaryBtn } from "../page-elements/PrimaryBtn"
+
 
 const StyledSwiperArticle = styled.article`
     display: grid;
@@ -55,6 +57,7 @@ const Parallax = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam dictum mattis velit, sit
                     amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor.
                     Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. </p>
+                    <PrimaryBtn>SHOP</PrimaryBtn>
                 </div>
             </StyledSwiperArticle>
             <StyledSwiperArticle>
@@ -64,6 +67,7 @@ const Parallax = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam dictum mattis velit, sit
                     amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor.
                     Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. </p>
+                    <PrimaryBtn>SHOP</PrimaryBtn>
                 </div>
             </StyledSwiperArticle>
             <StyledSwiperArticle>
@@ -73,6 +77,7 @@ const Parallax = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam dictum mattis velit, sit
                     amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor.
                     Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. </p>
+                    <PrimaryBtn>SHOP</PrimaryBtn>
                 </div>
             </StyledSwiperArticle>
         </Swiper>
