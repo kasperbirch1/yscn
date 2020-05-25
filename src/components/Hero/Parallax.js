@@ -22,6 +22,7 @@ const StyledSwiperArticle = styled.article`
     }
     p {
         font-size: 1rem;
+        margin-bottom: 2rem;
     }
 `
 
@@ -56,7 +57,7 @@ const Parallax = () => {
                 <div data-swiper-parallax="-100">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam dictum mattis velit, sit
                     amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor.
-                    Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. </p>
+                    Suspendisse in sem justo. </p>
                     <PrimaryBtn>SHOP</PrimaryBtn>
                 </div>
             </StyledSwiperArticle>
@@ -66,7 +67,7 @@ const Parallax = () => {
                 <div data-swiper-parallax="-100">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam dictum mattis velit, sit
                     amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor.
-                    Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. </p>
+                    Suspendisse in sem justo. </p>
                     <PrimaryBtn>SHOP</PrimaryBtn>
                 </div>
             </StyledSwiperArticle>
@@ -76,7 +77,7 @@ const Parallax = () => {
                 <div data-swiper-parallax="-100">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam dictum mattis velit, sit
                     amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor.
-                    Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. </p>
+                    Suspendisse in sem justo. </p>
                     <PrimaryBtn>SHOP</PrimaryBtn>
                 </div>
             </StyledSwiperArticle>
