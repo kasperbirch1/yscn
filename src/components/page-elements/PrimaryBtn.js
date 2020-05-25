@@ -1,8 +1,13 @@
 import styled from "styled-components";
+import { breakpoints } from '../../theme/breakpoints'
 export const PrimaryBtn = styled.a`
+  @media ${breakpoints.sm} {
+    width: 125px;
+    margin: .5rem auto;
+  }
   text-decoration: none;
-  display: block; 
-  margin: .5rem auto;
+  display: block;
+
   padding: .5rem 1rem; 
   border: 1px solid white;
   border-radius: 5px;
@@ -13,8 +18,8 @@ export const PrimaryBtn = styled.a`
   text-align: center;
   transition: all 0.2s;
   :hover {
-    color: #000000;
-    background-color: rgba(255,255,255,1);
+    background-color: rgba(255,255,255,.4);
     border: 1px solid black;
+    border: 1px solid white;
   }
 `;
