@@ -58,7 +58,7 @@ const Parallax = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam dictum mattis velit, sit
                     amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor.
                     Suspendisse in sem justo. </p>
-                    <PrimaryBtn>SHOP</PrimaryBtn>
+                    <PrimaryBtn>See More..</PrimaryBtn>
                 </div>
             </StyledSwiperArticle>
             <StyledSwiperArticle>
@@ -68,7 +68,7 @@ const Parallax = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam dictum mattis velit, sit
                     amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor.
                     Suspendisse in sem justo. </p>
-                    <PrimaryBtn>SHOP</PrimaryBtn>
+                    <PrimaryBtn>Get More..</PrimaryBtn>
                 </div>
             </StyledSwiperArticle>
             <StyledSwiperArticle>
@@ -78,7 +78,7 @@ const Parallax = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam dictum mattis velit, sit
                     amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor.
                     Suspendisse in sem justo. </p>
-                    <PrimaryBtn>SHOP</PrimaryBtn>
+                    <PrimaryBtn>Feel More..</PrimaryBtn>
                 </div>
             </StyledSwiperArticle>
         </Swiper>

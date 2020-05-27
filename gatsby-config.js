@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `NONNAKED`,
-    description: `YSCN® Officielt Site | Shop den Nye Kollektion‎`,
+    description: `YSCN® Officielt Site | Yours Sincerely Cecilie Nilsson`,
     author: `@YSCN`,
     menuLinks: [
       {

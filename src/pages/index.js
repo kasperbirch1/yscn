@@ -4,10 +4,12 @@ import Image from "../components/image"
 import { H1, P } from "../components/page-elements"
 import SEO from "../components/seo"
 import Parallax from '../components/Hero/Parallax'
+import ShowProduct from '../components/ShowProduct/ShowProduct'
 const IndexPage = () => (
   <>
     <SEO title="Home" />
     <Parallax />
+    <ShowProduct />
     <H1>Hi people</H1>
     <P>Welcome to your new Gatsby site.</P>
     <P>Now go build something great.</P>

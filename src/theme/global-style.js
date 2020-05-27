@@ -98,7 +98,7 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colour.grey[900]};
   }
   body {
-    line-height: ${({ theme }) => theme.lineHeight.relaxed};
+    line-height: ${({ theme }) => theme.lineHeight.tight};
     letter-spacing: ${({ theme }) => theme.letterSpacing.wide};
     background-color: ${({ theme }) => theme.colour.white};
   }
