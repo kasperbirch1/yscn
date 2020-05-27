@@ -68,12 +68,13 @@ const StyledHeader = styled.header`
         list-style: none;
 
         a {
+          text-transform: uppercase;
           text-decoration: none;
           color: white;
           transition: color 300ms;
 
           :hover {
-            color: red;
+            color: silver;
           }
         }
       }

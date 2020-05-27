@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { breakpoints } from '../../theme/breakpoints'
 export const PrimaryBtn = styled.a`
   @media ${breakpoints.sm} {
-    width: 125px;
+    width: 150px;
     margin: .5rem auto;
   }
   text-decoration: none;
