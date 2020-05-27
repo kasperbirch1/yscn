@@ -6,14 +6,17 @@ const StyledFooter = styled.footer`
     color: white;
     text-align: center;
     text-transform: capitalize;
+    h2 {
+        font-style: italic;
+        margin-bottom: .5rem;
+    }
 `
 
 const Footer = ({ siteSlogan }) => {
     return (
         <StyledFooter>
-            <h2>{siteSlogan} <span>💎</span></h2>
-            <span>😘</span>
-
+            <h2>{siteSlogan}</h2>
+            <span style={{ fontSize: '3rem' }}>💎</span>
         </StyledFooter>
     )
 }
