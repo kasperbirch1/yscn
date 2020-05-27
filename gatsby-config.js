@@ -3,6 +3,8 @@ module.exports = {
     title: `NONNAKED`,
     description: `YSCN® Officielt Site | Yours Sincerely Cecilie Nilsson`,
     author: `@YSCN`,
+    slogan: 'Yours Sincerely Cecilie Nilsson',
+
     menuLinks: [
       {
         name: 'home',

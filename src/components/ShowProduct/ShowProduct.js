@@ -4,7 +4,7 @@ import productImg from '../../images/YSCN-nonnaked.jpg'
 
 import styled from 'styled-components'
 const StyledShowProduct = styled.section`
-    background-color: #e6e6e6;
+    background-color: WhiteSmoke;
     color: #313131;
     padding: 2rem;
     text-align: center;
@@ -14,8 +14,18 @@ const StyledShowProduct = styled.section`
             display: block;
             margin: 0 auto;
             max-width: 50%;
+            margin-bottom: 1rem;
         }
-        
+        h3 {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: .8rem;
+        }
+        h2 {
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
     }
 `
 
@@ -24,7 +34,6 @@ const ShowProduct = () => {
         <StyledShowProduct>
             <article>
                 <img src={productImg} alt="" />
-                <span>💎</span>
                 <h3>YSCN</h3>
                 <h2>NONNAKED</h2>
                 <PrimaryBtn style={{ backgroundColor: 'black', borderColor: 'black' }}>Buy Now</PrimaryBtn>
