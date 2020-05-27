@@ -18,7 +18,7 @@ export const theme = {
     },
   },
   font: {
-    sans: "Cambay, san-serif",
+    sans: "Cambay, sans-serif",
     serif: "Arvo, serif",
     monospace: '"Ubuntu Mono", monospace',
   },
@@ -98,7 +98,7 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colour.grey[900]};
   }
   body {
-    line-height: ${({ theme }) => theme.lineHeight.tight};
+    line-height: ${({ theme }) => theme.lineHeight.snug};
     letter-spacing: ${({ theme }) => theme.letterSpacing.wide};
     background-color: ${({ theme }) => theme.colour.white};
   }
