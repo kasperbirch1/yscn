@@ -16,7 +16,6 @@ const Footer = ({ siteSlogan }) => {
     return (
         <StyledFooter>
             <h2>{siteSlogan}</h2>
-            <span style={{ fontSize: '2rem' }}>💎</span>
         </StyledFooter>
     )
 }
