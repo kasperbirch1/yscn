@@ -4,6 +4,17 @@ import Swiper from 'react-id-swiper';
 import "swiper/css/swiper.css"
 import "./InstagramCoverflowEffect.css"
 import useInstagram from '../../hooks/useInstagram';
+import styled from 'styled-components'
+const StyledeInstaLink = styled.a`
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    h2 {
+    padding-top: 1rem;
+    }
+`
 
 const InstagramCoverflowEffect = () => {
     const instaPhotos = useInstagram();
@@ -20,14 +31,11 @@ const InstagramCoverflowEffect = () => {
             depth: 100,
             modifier: 1,
             slideShadows: true
-        },
-        pagination: {
-            el: '.swiper-pagination'
         }
     }
     return (
-        <>
-            <h2>Instagram posts from @{username}</h2>
+        <section>
+            <StyledeInstaLink href={`https://instagram.com/${username}`}><h2>Instagram posts from @{username}</h2></StyledeInstaLink>
             <Swiper {...params}>
                 {
                     instaPhotos.map(photo => {
@@ -39,8 +47,7 @@ const InstagramCoverflowEffect = () => {
                     })
                 }
             </Swiper>
-            <a href={`https://instagram.com/${username}`}>See more from {username} on Instagram</a>
-        </>
+        </section>
     )
 }
 
