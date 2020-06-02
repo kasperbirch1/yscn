@@ -2,7 +2,7 @@ import React from 'react';
 import Swiper from 'react-id-swiper';
 import "swiper/css/swiper.css"
 import "./Parallax.css"
-import { breakpoints } from '../../theme/breakpoints'
+// import { breakpoints } from '../../theme/breakpoints'
 import styled from "styled-components"
 import { PrimaryBtn } from "../page-elements/PrimaryBtn"
 
