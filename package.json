@@ -23,9 +23,9 @@
     "react-helmet": "6.0.0",
     "react-icons": "^3.10.0",
     "react-id-swiper": "^3.0.0",
-    "styled-components": "^5.1.0",
+    "styled-components": "^5.1.1",
     "styled-reset": "4.1.4",
-    "swiper": "^5.4.0"
+    "swiper": "^5.4.2"
   },
   "devDependencies": {
     "prettier": "2.0.5"
