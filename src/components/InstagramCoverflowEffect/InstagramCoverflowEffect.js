@@ -35,7 +35,7 @@ const InstagramCoverflowEffect = () => {
     }
     return (
         <section style={{ margin: '2rem 0' }}>
-            <StyledeInstaLink href={`https://instagram.com/${username}`}><h2>Instagram posts from @{username}</h2></StyledeInstaLink>
+            <StyledeInstaLink href={`https://instagram.com/${username}`}><h2>Instagram posts from @yscn.dk</h2></StyledeInstaLink>
             <Swiper {...params}>
                 {
                     instaPhotos.map(photo => {
