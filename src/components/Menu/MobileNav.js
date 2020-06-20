@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { breakpoints } from "../../theme/breakpoints"
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai'
+import { IoIosMenu } from 'react-icons/io'
+import { RiCloseLine } from 'react-icons/ri'
 import { H1 } from '../page-elements/h1'
 
 const MobileNavMenu = ({ siteTitle, menuLinks }) => {
@@ -28,11 +30,12 @@ const MobileNavMenu = ({ siteTitle, menuLinks }) => {
   return (
     <MenuBar background={background}>
       <MenuIconContainer>
+        <span></span>
         <H1>{siteTitle}</H1>
         {menuOpen ?
-          <AiOutlineMenuUnfold style={{ zIndex: '11', fontSize: '1.5rem', color: 'black' }} onClick={() => toggleMenuOpen(!menuOpen)} />
+          <RiCloseLine style={{ zIndex: '11', fontSize: '1.5rem', color: 'black' }} onClick={() => toggleMenuOpen(!menuOpen)} />
           :
-          <AiOutlineMenuFold style={{ zIndex: '11', fontSize: '1.5rem' }} onClick={() => toggleMenuOpen(!menuOpen)} />
+          <IoIosMenu style={{ zIndex: '11', fontSize: '1.5rem' }} onClick={() => toggleMenuOpen(!menuOpen)} />
         }
       </MenuIconContainer>
       <MenuLinks menuOpen={menuOpen}>
