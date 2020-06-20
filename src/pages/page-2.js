@@ -26,9 +26,9 @@ const SecondPage = () => {
       <p>Welcome to page 2</p>
       <Link to="/">Go back to the homepage</Link>
       {
-        data.allContentfulPages.nodes.map(page => {
+        data.allContentfulPages.nodes.map((page, index) => {
           return (
-            <section style={{ padding: '1rem' }}>
+            <section key={index} style={{ padding: '1rem' }}>
               {documentToReactComponents(page.content.json)}
             </section>
           )
