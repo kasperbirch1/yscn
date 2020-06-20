@@ -1,5 +1,5 @@
 import React from 'react'
-import { PrimaryBtn } from "../page-elements/PrimaryBtn"
+import Checkout from '../checkout'
 import productImg from '../../images/YSCN-nonnaked.jpg'
 
 import styled from 'styled-components'
@@ -36,7 +36,7 @@ const ShowProduct = () => {
                 <img src={productImg} alt="" />
                 <h3>YSCN</h3>
                 <h2>NONNAKED</h2>
-                <PrimaryBtn style={{ backgroundColor: 'black', borderColor: 'black' }}>Buy Now</PrimaryBtn>
+                <Checkout />
             </article>
         </StyledShowProduct>
     )
