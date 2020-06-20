@@ -60,12 +60,10 @@ const MenuBar = styled.nav`
   @media ${breakpoints.sm} {
     display: none;
   }
-  background: ${({ background }) => (background ? "#000" : "linear-gradient(to bottom,#25211e 0,rgba(37,33,30,0) 100%)")};
-  color: white;
-  /* height: 3rem; */
+  background: ${({ background }) => (background ? "#FFF" : "linear-gradient(to bottom,#25211e 0,rgba(37,33,30,0) 100%)")};
+  color: ${({ background }) => (background ? "#000" : "rgba(229,223,217,.5)")};
   position: fixed;
   width: 100%;
-  border-bottom: "blue";
   z-index: 10;
   display: flex;
   align-items: center;
