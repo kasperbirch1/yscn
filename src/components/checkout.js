@@ -1,15 +1,15 @@
 import React from "react"
 import { loadStripe } from "@stripe/stripe-js"
 
-const stripePromise = loadStripe("pk_test_51Guv6TFMpSXFCLYaJvgtpF8kgQvPmJH0wMEMAeXjnHqUUz6B8ksdxRw1BvrmaBpOxhV68A6tgiDU93LDo19TJZRw007cXQPjyg")
+const stripePromise = loadStripe("pk_test_51Gw560IgQIWhgcN3J5FrTkHJnD3ak5wF2KYZ06A8qpgmoi2EOiziTH4ZjocQyQvDDXPx7B629ulxWphqlP0MoVZj00mmnAJKBM")
 const redirectToCheckout = async event => {
     event.preventDefault()
     const stripe = await stripePromise
     const { error } = await stripe.redirectToCheckout({
-        lineItems: [{ price: "price_1Gw2GBFMpSXFCLYaHqsXVdMx", quantity: 1 }],
+        lineItems: [{ price: "price_1Gw5NjIgQIWhgcN3yx9x8kX9", quantity: 1 }],
         mode: "payment",
-        successUrl: `http://localhost:8000/page-2/`,
-        cancelUrl: `http://localhost:8000/`,
+        successUrl: `https://yscn.netlify.app/`,
+        cancelUrl: `https://yscn.netlify.app/404`,
     })
     if (error) {
         console.warn("Error:", error)
