@@ -4,7 +4,6 @@ import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-
 const SecondPage = () => {
   const data = useStaticQuery(graphql`
   query {
