@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `NONNAKED`,
+    title: `YSCN`,
     description: `YSCN® Officielt Site | Yours Sincerely Cecilie Nilsson`,
     author: `@YSCN`,
     slogan: 'Yours Sincerely Cecilie Nilsson',
@@ -13,6 +13,10 @@ module.exports = {
       {
         name: 'home',
         link: '/'
+      },
+      {
+        name: 'Models',
+        link: '/models'
       },
       {
         name: 'about',
@@ -31,6 +35,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `lei6qf2bos8o`,
+        accessToken: `fQRhrN89E4r-Mb1bzdFQSp_X82KauazYdot9WTk0fwo`,
+      },
+    },
     // {
     //   resolve: `gatsby-source-stripe`,
     //   options: {
