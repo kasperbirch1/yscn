@@ -34,7 +34,7 @@ const MobileNavMenu = ({ siteTitle, menuLinks }) => {
           :
           <div onClick={() => toggleMenuOpen(!menuOpen)} style={{ display: 'flex', alignItems: 'center' }}>
             <IoIosMenu style={{ zIndex: '11', fontSize: '1.5rem' }} />
-            <spans style={{ lineHeight: "1" }}>MENU</spans>
+            <span style={{ lineHeight: "1" }}>MENU</span>
           </div>
         }
         <img src={logoImg} alt="YSCN Logo" />
