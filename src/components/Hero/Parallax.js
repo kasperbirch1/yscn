@@ -7,6 +7,7 @@ import styled from "styled-components"
 import { PrimaryBtn } from "../page-elements/PrimaryBtn"
 
 
+
 const StyledSwiperArticle = styled.article`
     display: grid;
     place-content: end center;
