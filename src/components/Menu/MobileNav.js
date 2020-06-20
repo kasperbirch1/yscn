@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { breakpoints } from "../../theme/breakpoints"
-import { AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai'
 import { IoIosMenu } from 'react-icons/io'
 import { RiCloseLine } from 'react-icons/ri'
 import { H1 } from '../page-elements/h1'
+import logoImg from '../../images/yscn-logo-black.png'
 
 const MobileNavMenu = ({ siteTitle, menuLinks }) => {
   const [menuOpen, toggleMenuOpen] = useState(false)
@@ -30,13 +30,15 @@ const MobileNavMenu = ({ siteTitle, menuLinks }) => {
   return (
     <MenuBar background={background}>
       <MenuIconContainer>
-        <span></span>
-        <H1>{siteTitle}</H1>
         {menuOpen ?
           <RiCloseLine style={{ zIndex: '11', fontSize: '1.5rem', color: 'black' }} onClick={() => toggleMenuOpen(!menuOpen)} />
           :
-          <IoIosMenu style={{ zIndex: '11', fontSize: '1.5rem' }} onClick={() => toggleMenuOpen(!menuOpen)} />
+          <div onClick={() => toggleMenuOpen(!menuOpen)} style={{ display: 'flex', alignItems: 'center' }}>
+            <IoIosMenu style={{ zIndex: '11', fontSize: '1.5rem' }} />
+            <spans style={{ lineHeight: "1" }}>MENU</spans>
+          </div>
         }
+        <img src={logoImg} alt="YSCN Logo" />
       </MenuIconContainer>
       <MenuLinks menuOpen={menuOpen}>
         <ul>
@@ -55,13 +57,13 @@ const MobileNavMenu = ({ siteTitle, menuLinks }) => {
 
 export default MobileNavMenu
 
-const MenuBar = styled.header`
+const MenuBar = styled.nav`
   @media ${breakpoints.sm} {
     display: none;
   }
   background: ${({ background }) => (background ? "#000" : "linear-gradient(to bottom,#25211e 0,rgba(37,33,30,0) 100%)")};
   color: white;
-  height: 3rem;
+  /* height: 3rem; */
   position: fixed;
   width: 100%;
   border-bottom: "blue";
@@ -71,11 +73,17 @@ const MenuBar = styled.header`
 `
 
 const MenuIconContainer = styled.div`
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
+  padding: .5rem;
+
+  img {
+    justify-self: center;
+    width: 75px;
+  }
 `
 
 const MenuLinks = styled.nav`

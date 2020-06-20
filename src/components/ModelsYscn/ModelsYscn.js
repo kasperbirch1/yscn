@@ -3,36 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { breakpoints } from '../../theme/breakpoints'
 import styled from 'styled-components'
 
-const StyledModelLink = styled.article`
-    background-image: url('${props => props.img}');
-    background-repeat: no-repeat;
-    background-position:  center;
-    background-size: cover;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    h2 {
-        @media ${breakpoints.sm} {
-          background-color: transparent;
-            font-size: 2.5rem;
-        }
-        font-size: 1.5rem;
-        padding: 1rem;
-        color: white;
-        background-color: rgba(0,0,0,.75)
-    }
-`
-function ModelLink({ img, name }) {
-    return (
-        <StyledModelLink img={img}>
-            <span></span>
-            <h2>{name}</h2>
-        </StyledModelLink>
-    )
-}
-
-const StyledModelsYscn = styled.section`
+const StyledModelsYscnContainer = styled.section`
     padding-top: 3rem;
     margin: 0 .5rem;
     ul {
@@ -79,7 +50,7 @@ const ModelsYscn = () => {
     const models = data.allContentfulModels.nodes
 
     return (
-        <StyledModelsYscn>
+        <StyledModelsYscnContainer>
             <h1>All Models</h1>
             <ul>
                 {
@@ -92,8 +63,37 @@ const ModelsYscn = () => {
                     })
                 }
             </ul>
-        </StyledModelsYscn>
+        </StyledModelsYscnContainer>
     )
 }
 
 export default ModelsYscn
+/////////////////////////////////////////////////////////
+const StyledModelLink = styled.article`
+    background-image: url('${props => props.img}');
+    background-repeat: no-repeat;
+    background-position:  center;
+    background-size: cover;
+    height: 500px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    h2 {
+        grid-row: 2/-1;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        color: white;
+        background-color: rgba(0,0,0,.75);
+        @media ${breakpoints.sm} {
+          background-color: transparent;
+            font-size: 2.5rem;
+        }
+    }
+`
+function ModelLink({ img, name }) {
+    return (
+        <StyledModelLink img={img}>
+            <h2>{name}</h2>
+        </StyledModelLink>
+    )
+}

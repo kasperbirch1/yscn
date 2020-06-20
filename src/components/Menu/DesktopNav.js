@@ -24,7 +24,7 @@ const DesktopNavMenu = ({ siteTitle, menuLinks }) => {
   }, [])
 
   return (
-    <StyledHeader background={background}>
+    <StyledNav background={background}>
       <H1>{siteTitle}</H1>
       <ul>
         {menuLinks.map(link => {
@@ -35,13 +35,13 @@ const DesktopNavMenu = ({ siteTitle, menuLinks }) => {
           )
         })}
       </ul>
-    </StyledHeader>
+    </StyledNav>
   )
 }
 
 export default DesktopNavMenu
 
-const StyledHeader = styled.header`
+const StyledNav = styled.nav`
   display: none;
   @media ${breakpoints.sm} {
     width: 100%;

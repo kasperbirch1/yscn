@@ -18,7 +18,7 @@ export const theme = {
     },
   },
   font: {
-    sans: "Cambay, sans-serif",
+    sans: "Roboto, sans-serif",
     serif: "Arvo, serif",
     monospace: '"Ubuntu Mono", monospace',
   },
@@ -101,5 +101,10 @@ export const GlobalStyle = createGlobalStyle`
     line-height: ${({ theme }) => theme.lineHeight.snug};
     letter-spacing: ${({ theme }) => theme.letterSpacing.wide};
     background-color: ${({ theme }) => theme.colour.white};
+  }
+
+  img {
+    display: block;
+    width: 100%;
   }
 `

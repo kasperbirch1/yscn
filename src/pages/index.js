@@ -1,6 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
-import Parallax from '../components/Hero/Parallax'
+import FadeEffect from '../components/Hero/FadeEffect'
 import ShowProduct from '../components/ShowProduct/ShowProduct'
 import InstagramCoverflowEffect from '../components/InstagramCoverflowEffect/InstagramCoverflowEffect'
 
@@ -8,7 +8,7 @@ import InstagramCoverflowEffect from '../components/InstagramCoverflowEffect/Ins
 const IndexPage = () => (
   <>
     <SEO title="Home" />
-    <Parallax />
+    <FadeEffect />
     <ShowProduct />
     <InstagramCoverflowEffect />
   </>

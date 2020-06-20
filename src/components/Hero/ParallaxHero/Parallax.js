@@ -4,7 +4,7 @@ import "swiper/css/swiper.css"
 import "./Parallax.css"
 // import { breakpoints } from '../../theme/breakpoints'
 import styled from "styled-components"
-import { PrimaryBtn } from "../page-elements/PrimaryBtn"
+import { PrimaryBtn } from "../../page-elements/PrimaryBtn"
 
 
 

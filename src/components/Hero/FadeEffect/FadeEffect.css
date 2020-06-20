@@ -1,0 +1,17 @@
+:root {
+    --swiper-theme-color: white;
+}
+
+.swiper-slide {
+ min-height: 80vh;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+   font-size: 1.5rem;
+}
+
+.swiper-pagination-bullet {
+    height: .75rem;
+    width: .75rem;
+}
