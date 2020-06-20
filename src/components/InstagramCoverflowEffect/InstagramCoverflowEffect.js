@@ -40,7 +40,7 @@ const InstagramCoverflowEffect = () => {
                 {
                     instaPhotos.map(photo => {
                         return (
-                            <div className="swiper-slide" key={photo.id}  >
+                            <div className="swiper-slide swiper-slide-insta" key={photo.id}  >
                                 <Image key={photo.id} fluid={photo.fluid} />
                             </div>
                         )

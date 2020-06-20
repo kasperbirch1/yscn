@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { breakpoints } from "../../theme/breakpoints"
 import { IoIosMenu } from 'react-icons/io'
 import { RiCloseLine } from 'react-icons/ri'
-import { H1 } from '../page-elements/h1'
 import logoImg from '../../images/yscn-logo-black.png'
 
 const MobileNavMenu = ({ siteTitle, menuLinks }) => {
