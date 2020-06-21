@@ -3,11 +3,11 @@ import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const ContenfullPageTempalate = ({ data }) => {
-    return (
-        <>
-            {documentToReactComponents(data.contentfulPages.content.json)}
-        </>
-    )
+  return (
+    <>
+      {documentToReactComponents(data.contentfulPages.content.json)}
+    </>
+  )
 }
 
 export default ContenfullPageTempalate

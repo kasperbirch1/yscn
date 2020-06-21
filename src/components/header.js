@@ -5,7 +5,7 @@ import DesktopNavMenu from '../components/Menu/DesktopNav'
 import MobileNavMenu from '../components/Menu/MobileNav'
 
 
-const Header = ({ menuLinks }) => {
+const Header = () => {
   const data = useStaticQuery(graphql`
   {
     allContentfulPages(sort: {fields: order, order: ASC}) {
@@ -16,7 +16,6 @@ const Header = ({ menuLinks }) => {
     }
   }
   `)
-  console.log("header data", data.allContentfulPages.nodes);
 
   return (
     <>

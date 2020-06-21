@@ -55,8 +55,7 @@ const StyledNav = styled.nav`
     z-index: 10;
     padding: 0.5rem;
     transition: background 300ms;
-    background: ${({ background }) => (background ? "#000" : "linear-gradient(to bottom,#25211e 0,rgba(37,33,30,0) 100%)")};
-    color: white;
+    background: ${({ background }) => (background ? "#FFF" : "linear-gradient(to bottom,#25211e 0,rgba(37,33,30,0) 100%)")};
     img {
       width: 100px;
     }
@@ -74,7 +73,7 @@ const StyledNav = styled.nav`
         a {
           text-transform: uppercase;
           text-decoration: none;
-          color: white;
+          color: ${({ background }) => (background ? "#000" : "rgba(229,223,217,.5)")};
           transition: color 300ms;
 
           :hover {

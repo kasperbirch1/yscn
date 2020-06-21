@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header menuLinks={data.site.siteMetadata.menuLinks} />
+      <Header />
       <main>{children}</main>
       <Footer siteSlogan={data.site.siteMetadata.slogan} />
     </>
