@@ -28,6 +28,9 @@ const DesktopNavMenu = ({ menuLinks }) => {
     <StyledNav background={background}>
       <img src={logoImg} alt="YSCN Logo" />
       <ul>
+        <li>
+          <Link to="/" >Home</Link>
+        </li>
         {menuLinks.map(link => {
           return (
             <li key={link.title}>
@@ -35,6 +38,9 @@ const DesktopNavMenu = ({ menuLinks }) => {
             </li>
           )
         })}
+        <li>
+          <Link to="/yscn-models" >YSCN Models</Link>
+        </li>
       </ul>
     </StyledNav>
   )

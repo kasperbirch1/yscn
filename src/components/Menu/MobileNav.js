@@ -41,6 +41,9 @@ const MobileNavMenu = ({ menuLinks }) => {
       </MenuIconContainer>
       <MenuLinks menuOpen={menuOpen}>
         <ul>
+          <li>
+            <Link to="/" onClick={() => toggleMenuOpen(!menuOpen)}>Home</Link>
+          </li>
           {menuLinks.map(link => {
             return (
               <li key={link.title}>
@@ -48,6 +51,9 @@ const MobileNavMenu = ({ menuLinks }) => {
               </li>
             )
           })}
+          <li>
+            <Link to="/yscn-models" onClick={() => toggleMenuOpen(!menuOpen)}>YSCN Models</Link>
+          </li>
         </ul>
       </MenuLinks>
     </MenuBar>
