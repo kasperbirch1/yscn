@@ -4,7 +4,6 @@ import { breakpoints } from '../../theme/breakpoints'
 import styled from 'styled-components'
 
 const StyledModelsYscnContainer = styled.section`
-    padding-top: 3rem;
     margin: 0 .5rem;
     ul {
         display: grid;

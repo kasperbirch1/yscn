@@ -6,7 +6,7 @@ import { IoIosMenu } from 'react-icons/io'
 import { RiCloseLine } from 'react-icons/ri'
 import logoImg from '../../images/yscn-logo-black.png'
 
-const MobileNavMenu = ({ siteTitle, menuLinks }) => {
+const MobileNavMenu = ({ menuLinks }) => {
   const [menuOpen, toggleMenuOpen] = useState(false)
   const [background, setBackground] = useState(false)
   const navRef = useRef()
@@ -43,8 +43,8 @@ const MobileNavMenu = ({ siteTitle, menuLinks }) => {
         <ul>
           {menuLinks.map(link => {
             return (
-              <li key={link.name}>
-                <Link to={link.link} onClick={() => toggleMenuOpen(!menuOpen)}>{link.name}</Link>
+              <li key={link.title}>
+                <Link to={link.slug} onClick={() => toggleMenuOpen(!menuOpen)}>{link.title}</Link>
               </li>
             )
           })}

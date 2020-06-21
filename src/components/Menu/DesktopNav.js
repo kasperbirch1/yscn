@@ -5,7 +5,7 @@ import { breakpoints } from "../../theme/breakpoints"
 import logoImg from '../../images/yscn-logo-black.png'
 
 
-const DesktopNavMenu = ({ siteTitle, menuLinks }) => {
+const DesktopNavMenu = ({ menuLinks }) => {
   const [background, setBackground] = useState(false)
   const navRef = useRef()
 
@@ -30,8 +30,8 @@ const DesktopNavMenu = ({ siteTitle, menuLinks }) => {
       <ul>
         {menuLinks.map(link => {
           return (
-            <li key={link.name}>
-              <Link to={link.link}>{link.name}</Link>
+            <li key={link.title}>
+              <Link to={link.slug}>{link.title}</Link>
             </li>
           )
         })}
@@ -45,6 +45,7 @@ export default DesktopNavMenu
 const StyledNav = styled.nav`
   display: none;
   @media ${breakpoints.sm} {
+    margin-bottom: 5rem;
     width: 100%;
     display: flex;
     align-items: center;
