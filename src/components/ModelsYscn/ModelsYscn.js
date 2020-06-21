@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { breakpoints } from '../../theme/breakpoints'
 import styled from 'styled-components'
 
@@ -26,7 +26,8 @@ const ModelsYscn = () => {
         allContentfulModels {
             nodes {
               id
-              name
+              title
+              slug
               description {
                 content {
                   content {
@@ -39,15 +40,6 @@ const ModelsYscn = () => {
                   src
                 }
               }
-              waist
-              size
-              shoe
-              runway
-              hip
-              height
-              haircolor
-              eyes
-              bust
             }
           }
     }
@@ -62,7 +54,7 @@ const ModelsYscn = () => {
                     models.map((model, index) => {
                         return (
                             <li key={index}>
-                                <ModelLink name={model.name} img={model.images[0].fluid.src} />
+                                <ModelLink name={model.title} slug={model.slug} img={model.images[0].fluid.src} />
                             </li>
                         )
                     })
@@ -94,11 +86,14 @@ const StyledModelLink = styled.article`
             font-size: 2.5rem;
         }
     }
+  
 `
-function ModelLink({ img, name }) {
+function ModelLink({ img, name, slug }) {
     return (
-        <StyledModelLink img={img}>
-            <h2>{name}</h2>
-        </StyledModelLink>
+        <Link to={slug}>
+            <StyledModelLink img={img}>
+                <h2>{name}</h2>
+            </StyledModelLink>
+        </Link>
     )
 }

@@ -107,4 +107,10 @@ export const GlobalStyle = createGlobalStyle`
     display: block;
     width: 100%;
   }
+
+  a {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+  }
 `
