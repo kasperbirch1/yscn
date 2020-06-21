@@ -37,7 +37,7 @@ const MobileNavMenu = ({ menuLinks }) => {
             <span style={{ lineHeight: "1" }}>MENU</span>
           </div>
         }
-        <img src={logoImg} alt="YSCN Logo" />
+        {/* <img src={logoImg} alt="YSCN Logo" /> */}
       </MenuIconContainer>
       <MenuLinks menuOpen={menuOpen}>
         <ul>

@@ -1,10 +1,13 @@
 import React from 'react'
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import photo1 from '../images/yscn-logo.jpg'
+
 
 const ContenfullPageTempalate = ({ data }) => {
   return (
     <>
+      <img src={photo1} alt="hero" />
       {documentToReactComponents(data.contentfulPages.content.json)}
     </>
   )
