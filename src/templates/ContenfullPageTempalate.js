@@ -8,7 +8,9 @@ const ContenfullPageTempalate = ({ data }) => {
   return (
     <>
       <img src={photo1} alt="hero" />
-      {documentToReactComponents(data.contentfulPages.content.json)}
+      <article style={{ padding: '1rem' }}>
+        {documentToReactComponents(data.contentfulPages.content.json)}
+      </article>
     </>
   )
 }
