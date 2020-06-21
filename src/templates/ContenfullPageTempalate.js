@@ -2,15 +2,30 @@ import React from 'react'
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import photo1 from '../images/yscn-logo.jpg'
+import styled from 'styled-components'
+const StyledArticle = styled.article`
+  padding: 1rem;
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  b {
+    font-weight: bold;
+  }
+`
 
 
 const ContenfullPageTempalate = ({ data }) => {
   return (
     <>
       <img src={photo1} alt="hero" />
-      <article style={{ padding: '1rem' }}>
+      <StyledArticle>
         {documentToReactComponents(data.contentfulPages.content.json)}
-      </article>
+      </StyledArticle>
     </>
   )
 }
