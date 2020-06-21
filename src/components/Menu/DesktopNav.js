@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { breakpoints } from "../../theme/breakpoints"
-import { H1 } from '../page-elements/h1'
+import logoImg from '../../images/yscn-logo-black.png'
+
 
 const DesktopNavMenu = ({ siteTitle, menuLinks }) => {
   const [background, setBackground] = useState(false)
@@ -25,7 +26,7 @@ const DesktopNavMenu = ({ siteTitle, menuLinks }) => {
 
   return (
     <StyledNav background={background}>
-      <H1>{siteTitle}</H1>
+      <img src={logoImg} alt="YSCN Logo" />
       <ul>
         {menuLinks.map(link => {
           return (
@@ -45,7 +46,6 @@ const StyledNav = styled.nav`
   display: none;
   @media ${breakpoints.sm} {
     width: 100%;
-    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -56,6 +56,9 @@ const StyledNav = styled.nav`
     transition: background 300ms;
     background: ${({ background }) => (background ? "#000" : "linear-gradient(to bottom,#25211e 0,rgba(37,33,30,0) 100%)")};
     color: white;
+    img {
+      width: 100px;
+    }
     ul {
       max-width: 800px;
       display: flex;
