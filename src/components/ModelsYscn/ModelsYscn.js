@@ -5,9 +5,15 @@ import styled from 'styled-components'
 
 const StyledModelsYscnContainer = styled.section`
     margin: 0 .5rem;
+    h1 {
+        text-align: center;
+        font-size: 1.75rem;
+        font-weight: bold;
+    }
     ul {
         display: grid;
         grid-gap: .5rem;
+        margin-bottom: .5rem;
         @media ${breakpoints.sm} {
             grid-template-columns: repeat(2, 1fr)
         }
@@ -50,7 +56,7 @@ const ModelsYscn = () => {
 
     return (
         <StyledModelsYscnContainer>
-            <h1>All Models</h1>
+            <h1>All YSCN Models</h1>
             <ul>
                 {
                     models.map((model, index) => {

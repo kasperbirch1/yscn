@@ -8,10 +8,15 @@ const StyledArticle = styled.article`
   h1 {
     font-size: 2rem;
     font-weight: bold;
+    margin-bottom: .75rem;
   }
   h2 {
     font-size: 1.5rem;
     font-weight: bold;
+    margin-bottom: .75rem;
+  }
+  p {
+    margin-bottom: .5rem;
   }
   b {
     font-weight: bold;

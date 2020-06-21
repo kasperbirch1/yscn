@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { breakpoints } from "../../theme/breakpoints"
 import { IoIosMenu } from 'react-icons/io'
 import { RiCloseLine } from 'react-icons/ri'
-import logoImg from '../../images/yscn-logo-black.png'
+// import logoImg from '../../images/yscn-logo-black.png'
 
 const MobileNavMenu = ({ menuLinks }) => {
   const [menuOpen, toggleMenuOpen] = useState(false)
