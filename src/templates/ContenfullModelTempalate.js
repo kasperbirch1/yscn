@@ -88,7 +88,10 @@ const ContenfullModelTempalate = ({ data }) => {
           <p>bust: </p>
           <span>{bust}</span>
         </StyledInfoSection>
-        <ModelInstagramLink href={instagram} target="_blank">{`See ${title}'s instagram`}</ModelInstagramLink>
+        {
+          instagram && <ModelInstagramLink href={instagram} target="_blank">{`See ${title}'s instagram`}</ModelInstagramLink>
+        }
+
       </section>
     </>
   )

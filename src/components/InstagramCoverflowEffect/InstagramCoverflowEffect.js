@@ -7,13 +7,10 @@ import useInstagram from '../../hooks/useInstagram';
 import styled from 'styled-components'
 const StyledeInstaLink = styled.a`
     text-decoration: none;
-    color: black;
+    color: white;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    h2 {
-    padding-top: 1rem;
-    }
 `
 
 const InstagramCoverflowEffect = () => {
@@ -35,7 +32,6 @@ const InstagramCoverflowEffect = () => {
     }
     return (
         <section style={{ margin: '2rem 0' }}>
-            <StyledeInstaLink href={`https://instagram.com/${username}`}><h2>Instagram posts from @yscn.dk</h2></StyledeInstaLink>
             <Swiper {...params}>
                 {
                     instaPhotos.map(photo => {
@@ -46,6 +42,9 @@ const InstagramCoverflowEffect = () => {
                         )
                     })
                 }
+                <div className="swiper-slide swiper-slide-insta swiper-slide-insta-infobox">
+                    <StyledeInstaLink href="https://instagram.com/yscn.dk" target="_blank">check out yscn.dk on instagram</StyledeInstaLink>
+                </div>
             </Swiper>
         </section>
     )

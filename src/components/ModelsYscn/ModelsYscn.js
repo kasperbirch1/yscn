@@ -15,7 +15,7 @@ const StyledModelsYscnContainer = styled.section`
         grid-gap: .5rem;
         margin-bottom: .5rem;
         @media ${breakpoints.sm} {
-            grid-template-columns: repeat(2, 1fr)
+            grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
         }
     }
 `

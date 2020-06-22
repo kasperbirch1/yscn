@@ -12,3 +12,9 @@
   .swiper-slide-insta {
     min-height: 100%;
    }
+
+   .swiper-slide-insta-infobox {
+     display: grid;
+     place-content: center;
+     background-color: black;
+   }

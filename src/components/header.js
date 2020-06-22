@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import DesktopNavMenu from '../components/Menu/DesktopNav'
 import MobileNavMenu from '../components/Menu/MobileNav'
 
-
 const Header = () => {
   const data = useStaticQuery(graphql`
   {
