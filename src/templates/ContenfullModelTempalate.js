@@ -55,7 +55,7 @@ const ContenfullModelTempalate = ({ data }) => {
       <img src={HeroImg} alt={title} />
       <section style={{ display: 'grid', gridTemplateColumns: `repeat(${images.length < 4 ? images.length : 4},1fr)` }}>
         {
-          images.map((image, index) => {
+          images.map((image) => {
             return (
               <img src={image.fluid.src} alt={title} onClick={(e) => setHeroImg(e.target.src)} onKeyDown={(e) => setHeroImg(e.target.src)} />
             )
