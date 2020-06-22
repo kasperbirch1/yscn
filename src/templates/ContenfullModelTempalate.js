@@ -55,9 +55,9 @@ const ContenfullModelTempalate = ({ data }) => {
       <img src={HeroImg} alt={title} />
       <section style={{ display: 'grid', gridTemplateColumns: `repeat(${images.length < 4 ? images.length : 4},1fr)` }}>
         {
-          images.map(image => {
+          images.map((image, index) => {
             return (
-              <img src={image.fluid.src} alt={title} onClick={(e) => setHeroImg(e.target.src)} />
+              <img src={image.fluid.src} alt={title} onClick={(e) => setHeroImg(e.target.src)} onKeyDown={(e) => setHeroImg(e.target.src)} />
             )
           })
         }
@@ -67,7 +67,7 @@ const ContenfullModelTempalate = ({ data }) => {
           <h1>{title}</h1>
           {documentToReactComponents(data.contentfulModels.description.json)}
         </StyledModelArticle>
-        <StyledModelInfoButton onClick={() => setModelInfo(!ModelInfo)}>{ModelInfo ? `Close info about ${title}` : `Open info about ${title}`}</StyledModelInfoButton>
+        <StyledModelInfoButton onKeyDown={() => setModelInfo(!ModelInfo)} onClick={() => setModelInfo(!ModelInfo)}>{ModelInfo ? `Close info about ${title}` : `Open info about ${title}`}</StyledModelInfoButton>
         <StyledInfoSection ModelInfo={ModelInfo}>
           <p>haircolor: </p>
           <span>{haircolor}</span>

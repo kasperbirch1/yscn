@@ -32,7 +32,7 @@ const MobileNavMenu = ({ menuLinks }) => {
         {menuOpen ?
           <RiCloseLine style={{ zIndex: '11', fontSize: '1.5rem', color: 'black' }} onClick={() => toggleMenuOpen(!menuOpen)} />
           :
-          <div onClick={() => toggleMenuOpen(!menuOpen)} style={{ display: 'flex', alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center' }} onClick={() => toggleMenuOpen(!menuOpen)} onKeyDown={(e) => toggleMenuOpen(!menuOpen)} role="button" tabIndex={0} >
             <IoIosMenu style={{ zIndex: '11', fontSize: '1.5rem' }} />
             <span style={{ lineHeight: "1" }}>MENU</span>
           </div>

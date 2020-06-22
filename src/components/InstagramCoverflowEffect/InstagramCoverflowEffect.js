@@ -15,7 +15,7 @@ const StyledeInstaLink = styled.a`
 
 const InstagramCoverflowEffect = () => {
     const instaPhotos = useInstagram();
-    const { username } = instaPhotos[0];
+    // const { username } = instaPhotos[0];
 
     const params = {
         effect: 'coverflow',
