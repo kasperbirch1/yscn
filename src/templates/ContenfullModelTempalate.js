@@ -53,11 +53,14 @@ const ContenfullModelTempalate = ({ data }) => {
   return (
     <>
       <img src={HeroImg} alt={title} />
-      <section style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }}>
-        <img src={images[0].fluid.src} alt={title} onClick={(e) => setHeroImg(e.target.src)} />
-        <img src={images[1].fluid.src} alt={title} onClick={(e) => setHeroImg(e.target.src)} />
-        <img src={images[0].fluid.src} alt={title} onClick={(e) => setHeroImg(e.target.src)} />
-        <img src={images[1].fluid.src} alt={title} onClick={(e) => setHeroImg(e.target.src)} />
+      <section style={{ display: 'grid', gridTemplateColumns: `repeat(${images.length},1fr)` }}>
+        {
+          images.map(image => {
+            return (
+              <img src={image.fluid.src} alt={title} onClick={(e) => setHeroImg(e.target.src)} />
+            )
+          })
+        }
       </section>
       <section style={{ padding: '.5rem' }}>
         <StyledModelArticle>
