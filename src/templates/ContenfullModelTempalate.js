@@ -69,24 +69,24 @@ const ContenfullModelTempalate = ({ data }) => {
         </StyledModelArticle>
         <StyledModelInfoButton onClick={() => setModelInfo(!ModelInfo)}>{ModelInfo ? `Close info about ${title}` : `Open info about ${title}`}</StyledModelInfoButton>
         <StyledInfoSection ModelInfo={ModelInfo}>
-          <p>waist:</p>
-          <span>{waist}</span>
-          <p>size:</p>
-          <span>{size}</span>
-          <p>shoe: </p>
-          <span>{shoe}</span>
-          <p>runway: </p>
-          <span>{runway ? "Yes" : "No!"}</span>
-          <p>hip: </p>
-          <span>{hip}</span>
-          <p>height: </p>
-          <span>{height}</span>
           <p>haircolor: </p>
           <span>{haircolor}</span>
           <p>eyes: </p>
           <span>{eyes}</span>
+          <p>height: </p>
+          <span>{height}</span>
+          <p>size:</p>
+          <span>{size}</span>
+          <p>hip: </p>
+          <span>{hip}</span>
+          <p>shoe: </p>
+          <span>{shoe}</span>
           <p>bust: </p>
           <span>{bust}</span>
+          <p>waist:</p>
+          <span>{waist}</span>
+          <p>runway: </p>
+          <span>{runway ? "Yes" : "No"}</span>
         </StyledInfoSection>
         {
           instagram && <ModelInstagramLink href={instagram} target="_blank">{`See ${title}'s instagram`}</ModelInstagramLink>
