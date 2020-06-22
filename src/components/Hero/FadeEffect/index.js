@@ -1,12 +1,37 @@
 import React from 'react';
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 import Swiper from 'react-id-swiper';
 import "swiper/css/swiper.css"
 import "./FadeEffect.css"
-import photo1 from '../../../images/yscn-logo.jpg'
-import photo2 from '../../../images/yscn-hero-01.jpg'
-import photo3 from '../../../images/yscn-hero.jpg'
 
 const FadeEffect = () => {
+    const data = useStaticQuery(graphql`
+        query {
+          heroImg1: file(relativePath: { eq: "yscn-logo.jpg" }) {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          heroImg2: file(relativePath: { eq: "yscn-hero-01.jpg" }) {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          heroImg3: file(relativePath: { eq: "yscn-hero.jpg" }) {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      `)
+
     const params = {
         spaceBetween: 30,
         effect: 'fade',
@@ -27,18 +52,21 @@ const FadeEffect = () => {
     return (
         <Swiper {...params}>
             <section>
-                <img style={{ height: '100%', objectFit: 'cover' }} src={photo1} alt="" />
+                <Img fluid={data.heroImg1.childImageSharp.fluid} style={{ height: '100%', objectFit: 'cover' }} />
                 <h2>1</h2>
             </section>
             <section>
-                <img style={{ height: '100%', objectFit: 'cover' }} src={photo2} alt="" />
+                <Img fluid={data.heroImg2.childImageSharp.fluid} style={{ height: '100%', objectFit: 'cover' }} />
                 <h2>2</h2>
             </section>
             <section>
-                <img style={{ height: '100%', objectFit: 'cover', objectPosition: 'top' }} src={photo3} alt="" />
+                <Img fluid={data.heroImg3.childImageSharp.fluid} style={{ height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
                 <h2>3</h2>
             </section>
         </Swiper>
     )
 };
 export default FadeEffect;
+
+
+
