@@ -53,7 +53,7 @@ const ContenfullModelTempalate = ({ data }) => {
   return (
     <>
       <img src={HeroImg} alt={title} />
-      <section style={{ display: 'grid', gridTemplateColumns: `repeat(${images.length},1fr)` }}>
+      <section style={{ display: 'grid', gridTemplateColumns: `repeat(${images.length < 4 ? images.length : 4},1fr)` }}>
         {
           images.map(image => {
             return (
