@@ -13,7 +13,7 @@ const StyledModelArticle = styled.article`
 const StyledInfoSection = styled.section`
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  max-height: ${({ ModelInfo }) => (ModelInfo ? "0" : "100vh")};
+  max-height: ${({ ModelInfo }) => (ModelInfo ? "100vh" : "0")};
   transition: ease-in-out 200ms;
   overflow: hidden;
   p {
@@ -46,13 +46,20 @@ const ModelInstagramLink = styled.a`
 `
 
 const ContenfullModelTempalate = ({ data }) => {
-  const [ModelInfo, setModelInfo] = useState(false)
-  console.log("model data", data);
   const { title, waist, size, shoe, runway, hip, height, haircolor, eyes, bust, images, instagram } = data.contentfulModels
+  console.log("model data", data);
+  const [HeroImg, setHeroImg] = useState(images[0].fluid.src)
+  const [ModelInfo, setModelInfo] = useState(false)
   return (
     <>
-      <img src={images[0].fluid.src} alt={title} />
-      <section>
+      <img src={HeroImg} alt={title} />
+      <section style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }}>
+        <img src={images[0].fluid.src} alt={title} onClick={(e) => setHeroImg(e.target.src)} />
+        <img src={images[1].fluid.src} alt={title} onClick={(e) => setHeroImg(e.target.src)} />
+        <img src={images[0].fluid.src} alt={title} onClick={(e) => setHeroImg(e.target.src)} />
+        <img src={images[1].fluid.src} alt={title} onClick={(e) => setHeroImg(e.target.src)} />
+      </section>
+      <section style={{ padding: '.5rem' }}>
         <StyledModelArticle>
           <h1>{title}</h1>
           {documentToReactComponents(data.contentfulModels.description.json)}
