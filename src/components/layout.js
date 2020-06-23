@@ -13,6 +13,8 @@ import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   useEffect(() => {
+    // get url
+    const currentUrl = window.location.pathname
     // override root variable called --vh width current screen size to and listen for a resize event
     document.querySelector(':root').style.setProperty('--vh', window.innerHeight + 'px');
     window.addEventListener('resize', () => {
@@ -39,7 +41,7 @@ const Layout = ({ children }) => {
 
   return (
     <div style={{ height: 'var(--vh)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-      <Header />
+      <Header currentUrl={currentUrl} />
       <main>{children}</main>
       <Footer siteSlogan={data.site.siteMetadata.slogan} />
     </div>

@@ -6,7 +6,7 @@ import MobileNavMenu from '../components/Menu/MobileNav'
 import HeroImg from '../components/HeroImg'
 
 
-const Header = () => {
+const Header = ({ currentUrl }) => {
   const data = useStaticQuery(graphql`
   {
     allContentfulPages(sort: {fields: order, order: ASC}) {
@@ -23,7 +23,7 @@ const Header = () => {
       <header>
         <DesktopNavMenu menuLinks={data.allContentfulPages.nodes} />
         <MobileNavMenu menuLinks={data.allContentfulPages.nodes} />
-        <HeroImg currentUrl={window.location.pathname} />
+        <HeroImg currentUrl={currentUrl} />
       </header>
 
     </>
