@@ -47,7 +47,7 @@ const MobileNavMenu = ({ menuLinks }) => {
           {menuLinks.map(link => {
             return (
               <li key={link.title}>
-                <Link to={link.slug} onClick={() => toggleMenuOpen(!menuOpen)}>{link.title}</Link>
+                <Link to={`/${link.slug}`} onClick={() => toggleMenuOpen(!menuOpen)}>{link.title}</Link>
               </li>
             )
           })}

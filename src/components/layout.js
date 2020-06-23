@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useEffect } from "react"
@@ -13,8 +6,6 @@ import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   useEffect(() => {
-    // get url
-    const currentUrl = window.location.pathname
     // override root variable called --vh width current screen size to and listen for a resize event
     document.querySelector(':root').style.setProperty('--vh', window.innerHeight + 'px');
     window.addEventListener('resize', () => {
@@ -38,10 +29,9 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
   return (
     <div style={{ height: 'var(--vh)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-      <Header currentUrl={currentUrl} />
+      <Header />
       <main>{children}</main>
       <Footer siteSlogan={data.site.siteMetadata.slogan} />
     </div>

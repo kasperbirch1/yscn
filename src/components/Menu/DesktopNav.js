@@ -34,7 +34,7 @@ const DesktopNavMenu = ({ menuLinks }) => {
         {menuLinks.map(link => {
           return (
             <li key={link.title}>
-              <Link to={link.slug}>{link.title}</Link>
+              <Link to={`/${link.slug}`}>{link.title}</Link>
             </li>
           )
         })}

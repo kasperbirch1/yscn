@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const HeroImg = ({ currentUrl }) => {
+const HeroImg = ({ CurrentUrl }) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "yscn-logo.jpg" }) {
@@ -17,7 +17,7 @@ const HeroImg = ({ currentUrl }) => {
   return (
     <>
       {
-        currentUrl === "/" ? null : <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+        CurrentUrl === "/" ? null : <Img fluid={data.placeholderImage.childImageSharp.fluid} />
       }
     </>
   )

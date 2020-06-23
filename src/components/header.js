@@ -1,12 +1,19 @@
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import DesktopNavMenu from '../components/Menu/DesktopNav'
 import MobileNavMenu from '../components/Menu/MobileNav'
 import HeroImg from '../components/HeroImg'
 
 
-const Header = ({ currentUrl }) => {
+const Header = () => {
+  const [CurrentUrl, setCurrentUrl] = useState("/")
+  useEffect(() => {
+    // get currentUrl
+    setCurrentUrl(window.location.pathname)
+    return () => {
+    }
+  }, [CurrentUrl])
   const data = useStaticQuery(graphql`
   {
     allContentfulPages(sort: {fields: order, order: ASC}) {
@@ -17,13 +24,12 @@ const Header = ({ currentUrl }) => {
     }
   }
   `)
-
   return (
     <>
       <header>
         <DesktopNavMenu menuLinks={data.allContentfulPages.nodes} />
         <MobileNavMenu menuLinks={data.allContentfulPages.nodes} />
-        <HeroImg currentUrl={currentUrl} />
+        <HeroImg CurrentUrl={CurrentUrl} />
       </header>
 
     </>
