@@ -7,6 +7,7 @@ const StyledFooter = styled.footer`
     color: white;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     a {
         display: block;
         cursor: pointer;

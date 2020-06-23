@@ -8,8 +8,8 @@ const redirectToCheckout = async event => {
     const { error } = await stripe.redirectToCheckout({
         lineItems: [{ price: "price_1Gw5NjIgQIWhgcN3yx9x8kX9", quantity: 1 }],
         mode: "payment",
-        successUrl: `https://yscn.netlify.app/`,
-        cancelUrl: `https://yscn.netlify.app/404`,
+        successUrl: `https://yscn.netlify.app/stripeSuccess`,
+        cancelUrl: `https://yscn.netlify.app/stripeCancel`,
     })
     if (error) {
         console.warn("Error:", error)

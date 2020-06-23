@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import HeroImg from '../components/HeroImg'
 import styled from 'styled-components'
 const StyledArticle = styled.article`
   padding: 1rem;
@@ -27,7 +26,6 @@ const StyledArticle = styled.article`
 const ContenfullPageTempalate = ({ data }) => {
   return (
     <>
-      <HeroImg />
       <StyledArticle>
         {documentToReactComponents(data.contentfulPages.content.json)}
       </StyledArticle>

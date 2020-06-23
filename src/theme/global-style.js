@@ -87,6 +87,10 @@ export const theme = {
 export const GlobalStyle = createGlobalStyle`
   ${reset}
 
+  :root {
+    --vh: 100vh;
+  }
+
   *, *:before, *:after {
     box-sizing: border-box;
   }

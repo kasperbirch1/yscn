@@ -91,7 +91,6 @@ const ContenfullModelTempalate = ({ data }) => {
         {
           instagram && <ModelInstagramLink href={instagram} target="_blank">{`See ${title}'s instagram`}</ModelInstagramLink>
         }
-
       </section>
     </>
   )
