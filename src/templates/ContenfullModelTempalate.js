@@ -2,32 +2,28 @@ import React, { useState } from 'react'
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styled from 'styled-components'
+import { breakpoints } from '../theme/breakpoints'
 
 const StyledContenfullModelTempalate = styled.section`
+  max-width: 800px;
+  margin: 0 auto;
   display: grid; 
   grid-template-columns: 1fr;
-  grid-template-rows: auto 500px auto;
+  grid-template-areas: 
+  "heroImg"
+  "thumbnailsGallery"
+  "infoContainer"
+  ;
   h1 {
-    z-index: 5;
-    grid-column: 1/2;
-    grid-row: 1/2;
     font-size: 2rem;
     text-align:center;
     align-self: center;
   }
-  .heroImg {
-    grid-column: 1/2;
-    grid-row: 1/3;
-  }
-  section {
-    grid-column: 1/2;
-    grid-row: 3/4;
-  }
-
-  .info-container {
-    grid-column: 1/2;
-    grid-row: 4/5;
-    padding: .5rem;
+  @media ${breakpoints.sm} {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "heroImg heroImg infoContainer"
+    "thumbnailsGallery thumbnailsGallery thumbnailsGallery";
   }
 `
 const StyledModelArticle = styled.article`
@@ -52,7 +48,7 @@ const StyledInfoSection = styled.section`
   }
 `
 
-const StyledModelInfoButton = styled.a`
+const StyledModelButton = styled.a`
   cursor: pointer;
   display: block;
   margin: .5rem 0;
@@ -61,14 +57,6 @@ const StyledModelInfoButton = styled.a`
   text-align: center;
 `
 
-const ModelInstagramLink = styled.a`
-  cursor: pointer;
-  display: block;
-  margin: .5rem 0;
-  border: 1px solid black;
-  padding: .5rem 1rem;
-  text-align: center;
-`
 
 const ContenfullModelTempalate = ({ data }) => {
   const { title, waist, size, shoe, runway, hip, height, haircolor, eyes, bust, images, instagram } = data.contentfulModels
@@ -77,9 +65,8 @@ const ContenfullModelTempalate = ({ data }) => {
   const [ModelInfo, setModelInfo] = useState(false)
   return (
     <StyledContenfullModelTempalate>
-      <h1>{title}</h1>
-      <img className="heroImg" src={HeroImg} alt={title} />
-      <section style={{ display: 'grid', gridTemplateColumns: `repeat(${images.length < 4 ? images.length : 4},1fr)` }}>
+      <img style={{ gridArea: 'heroImg' }} src={HeroImg} alt={title} />
+      <div style={{ gridArea: 'thumbnailsGallery', display: 'grid', gridTemplateColumns: `repeat(${images.length < 4 ? images.length : 4},1fr)` }}>
         {
           images.map((image) => {
             return (
@@ -87,12 +74,13 @@ const ContenfullModelTempalate = ({ data }) => {
             )
           })
         }
-      </section>
-      <section className="info-container">
+      </div>
+      <section style={{ gridArea: 'infoContainer', padding: '.5rem' }}>
+        <h1>{title}</h1>
         <StyledModelArticle>
           {documentToReactComponents(data.contentfulModels.description.json)}
         </StyledModelArticle>
-        <StyledModelInfoButton onKeyDown={() => setModelInfo(!ModelInfo)} onClick={() => setModelInfo(!ModelInfo)}>{ModelInfo ? `Close info about ${title}` : `Open info about ${title}`}</StyledModelInfoButton>
+        <StyledModelButton onKeyDown={() => setModelInfo(!ModelInfo)} onClick={() => setModelInfo(!ModelInfo)}>{ModelInfo ? `Close info about ${title}` : `Open info about ${title}`}</StyledModelButton>
         <StyledInfoSection ModelInfo={ModelInfo}>
           <p>haircolor: </p>
           <span>{haircolor}</span>
@@ -114,7 +102,7 @@ const ContenfullModelTempalate = ({ data }) => {
           <span>{runway ? "Yes" : "No"}</span>
         </StyledInfoSection>
         {
-          instagram && <ModelInstagramLink href={instagram} target="_blank">{`See ${title}'s instagram`}</ModelInstagramLink>
+          instagram && <StyledModelButton href={instagram} target="_blank">{`See ${title}'s instagram`}</StyledModelButton>
         }
       </section>
     </StyledContenfullModelTempalate>
