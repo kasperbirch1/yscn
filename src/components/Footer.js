@@ -2,14 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import { FaFacebookSquare, FaInstagram, FaYoutube } from 'react-icons/fa'
 const StyledFooter = styled.footer`
-    min-height:auto;
-    padding: 1rem;
     background-color: black;
     color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
     a {
+        padding: 1rem;
         display: block;
         cursor: pointer;
         svg {
