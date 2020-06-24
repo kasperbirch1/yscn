@@ -5,13 +5,15 @@ import ShowProduct from '../components/ShowProduct/ShowProduct'
 import InstagramCoverflowEffect from '../components/InstagramCoverflowEffect/InstagramCoverflowEffect'
 
 
-const IndexPage = () => (
-  <>
-    <SEO title="Home" />
-    <FadeEffect />
-    <ShowProduct />
-    <InstagramCoverflowEffect />
-  </>
-)
+const IndexPage = () => {
+  return (
+    <>
+      <SEO title="Home" />
+      <FadeEffect />
+      <ShowProduct />
+      <InstagramCoverflowEffect />
+    </>
+  )
+}
 
 export default IndexPage

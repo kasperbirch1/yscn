@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
-import React, { useEffect, useState } from "react"
+import React from "react"
+import { globalHistory } from '@reach/router'
 import { useStaticQuery, graphql } from "gatsby"
 import DesktopNavMenu from '../components/Menu/DesktopNav'
 import MobileNavMenu from '../components/Menu/MobileNav'
@@ -7,13 +8,7 @@ import HeroImg from '../components/HeroImg'
 
 
 const Header = () => {
-  const [CurrentUrl, setCurrentUrl] = useState("/")
-  useEffect(() => {
-    // get currentUrl
-    setCurrentUrl(window.location.pathname)
-    return () => {
-    }
-  }, [CurrentUrl])
+  const { location } = globalHistory
   const data = useStaticQuery(graphql`
   {
     allContentfulPages(sort: {fields: order, order: ASC}) {
@@ -29,7 +24,7 @@ const Header = () => {
       <header>
         <DesktopNavMenu menuLinks={data.allContentfulPages.nodes} />
         <MobileNavMenu menuLinks={data.allContentfulPages.nodes} />
-        <HeroImg CurrentUrl={CurrentUrl} />
+        <HeroImg CurrentUrl={location.pathname} />
       </header>
 
     </>
