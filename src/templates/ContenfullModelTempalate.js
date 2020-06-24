@@ -2,10 +2,35 @@ import React, { useState } from 'react'
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styled from 'styled-components'
-const StyledModelArticle = styled.article`
+
+const StyledContenfullModelTempalate = styled.section`
+  display: grid; 
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 500px auto;
   h1 {
-    font-size: 1.5rem;
+    z-index: 5;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-size: 2rem;
+    text-align:center;
+    align-self: center;
   }
+  .heroImg {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+  section {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  .info-container {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    padding: .5rem;
+  }
+`
+const StyledModelArticle = styled.article`
   p {
     font-style: italic;
   }
@@ -51,8 +76,9 @@ const ContenfullModelTempalate = ({ data }) => {
   const [HeroImg, setHeroImg] = useState(images[0].fluid.src)
   const [ModelInfo, setModelInfo] = useState(false)
   return (
-    <>
-      <img src={HeroImg} alt={title} />
+    <StyledContenfullModelTempalate>
+      <h1>{title}</h1>
+      <img className="heroImg" src={HeroImg} alt={title} />
       <section style={{ display: 'grid', gridTemplateColumns: `repeat(${images.length < 4 ? images.length : 4},1fr)` }}>
         {
           images.map((image) => {
@@ -62,9 +88,8 @@ const ContenfullModelTempalate = ({ data }) => {
           })
         }
       </section>
-      <section style={{ padding: '.5rem' }}>
+      <section className="info-container">
         <StyledModelArticle>
-          <h1>{title}</h1>
           {documentToReactComponents(data.contentfulModels.description.json)}
         </StyledModelArticle>
         <StyledModelInfoButton onKeyDown={() => setModelInfo(!ModelInfo)} onClick={() => setModelInfo(!ModelInfo)}>{ModelInfo ? `Close info about ${title}` : `Open info about ${title}`}</StyledModelInfoButton>
@@ -92,7 +117,7 @@ const ContenfullModelTempalate = ({ data }) => {
           instagram && <ModelInstagramLink href={instagram} target="_blank">{`See ${title}'s instagram`}</ModelInstagramLink>
         }
       </section>
-    </>
+    </StyledContenfullModelTempalate>
   )
 }
 
