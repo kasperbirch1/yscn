@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
     }
   `)
   return (
-    <div style={{ height: 'var(--vh)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+    <div style={{ minHeight: 'var(--vh)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
       <Header />
       <main>{children}</main>
       <Footer />
