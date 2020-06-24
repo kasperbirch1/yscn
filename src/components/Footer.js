@@ -9,7 +9,6 @@ const StyledFooter = styled.footer`
     align-items: center;
     a {
         padding: 1rem;
-        display: block;
         cursor: pointer;
         svg {
             font-size: 2.5rem;
