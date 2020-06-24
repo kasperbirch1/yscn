@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
     <div style={{ height: 'var(--vh)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
       <Header />
       <main>{children}</main>
-      <Footer siteSlogan={data.site.siteMetadata.slogan} />
+      <Footer />
     </div>
   )
 }
