@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { breakpoints } from '../theme/breakpoints'
 import styled from 'styled-components'
 const StyledArticle = styled.article`
   padding: 1rem;
@@ -19,6 +20,10 @@ const StyledArticle = styled.article`
   }
   b {
     font-weight: bold;
+  }
+  @media ${breakpoints.sm} {
+    max-width: 75%;
+    margin: 0 auto;
   }
 `
 

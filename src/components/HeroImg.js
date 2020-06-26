@@ -1,6 +1,13 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { breakpoints } from '../theme/breakpoints'
+import styled from 'styled-components'
+const StyledHeroImg = styled(Img)`
+  @media ${breakpoints.sm} {
+    max-height: 50vh;
+  }
+`
 
 const HeroImg = ({ CurrentUrl }) => {
   const data = useStaticQuery(graphql`
@@ -17,7 +24,7 @@ const HeroImg = ({ CurrentUrl }) => {
   return (
     <>
       {
-        CurrentUrl === "/" ? null : <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+        CurrentUrl === "/" ? null : <StyledHeroImg fluid={data.placeholderImage.childImageSharp.fluid} />
       }
     </>
   )
