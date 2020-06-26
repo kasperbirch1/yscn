@@ -41,6 +41,9 @@ const DesktopNavMenu = ({ menuLinks }) => {
         <li>
           <Link to="/yscn-models" >YSCN Models</Link>
         </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
       </ul>
     </StyledNav>
   )

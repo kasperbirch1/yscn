@@ -54,6 +54,9 @@ const MobileNavMenu = ({ menuLinks }) => {
           <li>
             <Link to="/yscn-models" onClick={() => toggleMenuOpen(!menuOpen)}>YSCN Models</Link>
           </li>
+          <li>
+            <Link to="/contact" onClick={() => toggleMenuOpen(!menuOpen)}>Contact</Link>
+          </li>
         </ul>
       </MenuLinks>
     </MenuBar>
