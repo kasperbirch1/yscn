@@ -14,8 +14,9 @@ const StyledContactForm = styled.form`
 const ContactForm = () => {
     const [formState, setFormState] = useState({
         name: "",
-        email: "",
         phone: "",
+        email: "",
+        message: "",
     })
 
     const encode = data => {
