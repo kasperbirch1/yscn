@@ -5,12 +5,17 @@ const StyledContactForm = styled.form`
     /* margin: 0 auto; */
     display: grid;
     justify-content: center;
+
+    textarea {
+        resize: none;
+    }
 `
 
 const ContactForm = () => {
     const [formState, setFormState] = useState({
         name: "",
         email: "",
+        phone: "",
     })
 
     const encode = data => {
@@ -22,7 +27,7 @@ const ContactForm = () => {
     const handleChange = e => {
         setFormState({
             ...formState,
-            [e.target.name]: `Her er en test fra ${e.target.value}`,
+            [e.target.name]: e.target.value,
         })
     }
 
@@ -55,6 +60,15 @@ const ContactForm = () => {
                 value={formState.name}
                 placeholder="Enter your name"
             />
+            <label htmlFor="phone">Phone</label>
+            <input
+                id="phone"
+                type="tel"
+                name="phone"
+                onChange={handleChange}
+                value={formState.phone}
+                placeholder="Enter your phone number"
+            />
             <label htmlFor="email">Email</label>
             <input
                 id="email"
@@ -64,6 +78,9 @@ const ContactForm = () => {
                 value={formState.email}
                 placeholder="Enter your email"
             />
+            <label htmlFor="message">Message</label>
+            <textarea name="message" id="message" placeholder="Enter your message" cols="30" rows="10"></textarea>
+
             <button type="submit">Submit</button>
         </StyledContactForm>
     )
