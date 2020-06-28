@@ -22,7 +22,7 @@ const ContactForm = () => {
     const handleChange = e => {
         setFormState({
             ...formState,
-            [e.target.name]: e.target.value,
+            [e.target.name]: `Her er en test fra ${e.target.value}`,
         })
     }
 
