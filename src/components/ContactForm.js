@@ -1,13 +1,48 @@
 import React, { useState } from "react"
+import { breakpoints } from '../theme/breakpoints'
 import styled from 'styled-components'
 const StyledContactForm = styled.form`
-    /* max-width: 50%; */
-    /* margin: 0 auto; */
+    margin: .5rem;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+    padding: 1rem .5rem;
     display: grid;
-    justify-content: center;
 
+    input, textarea {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        background: transparent;
+        margin-bottom: 1rem;
+        padding-top: .75rem;
+        ::placeholder,
+        ::-webkit-input-placeholder {
+            color: #ccc;
+            font-style: italic;
+            text-align: center;
+        }
+        :focus {
+            outline-color: #ccc;
+        }
+    }
     textarea {
         resize: none;
+        border: 1px solid #ccc;
+        border-radius: .5rem;
+    }
+    button {
+        background: transparent;
+        border: 1px solid #ccc;
+        border-radius: .5rem;
+        padding: .5rem 1rem;
+        text-align: center;
+        text-transform: uppercase;
+        :hover {
+            box-shadow: 0 0 11px rgba(33,33,33,.2); 
+        }
+    }
+    @media ${breakpoints.sm} {
+        margin: .5rem auto;
+        max-width: 30%;
     }
 `
 
@@ -59,7 +94,7 @@ const ContactForm = () => {
                 name="name"
                 onChange={handleChange}
                 value={formState.name}
-                placeholder="Enter your name"
+                placeholder="Please enter your name here.."
             />
             <label htmlFor="phone">Phone</label>
             <input
@@ -68,7 +103,7 @@ const ContactForm = () => {
                 name="phone"
                 onChange={handleChange}
                 value={formState.phone}
-                placeholder="Enter your phone number"
+                placeholder="Please enter your phone number here.."
             />
             <label htmlFor="email">Email</label>
             <input
@@ -77,7 +112,7 @@ const ContactForm = () => {
                 name="email"
                 onChange={handleChange}
                 value={formState.email}
-                placeholder="Enter your email"
+                placeholder="Please enter your email here.."
             />
             <label htmlFor="message">Message</label>
             <textarea
@@ -85,7 +120,7 @@ const ContactForm = () => {
                 name="message"
                 onChange={handleChange}
                 value={formState.message}
-                placeholder="Enter your message"
+                placeholder="Please enter your message here.."
                 cols="30" rows="10"></textarea>
 
             <button type="submit">Submit</button>
