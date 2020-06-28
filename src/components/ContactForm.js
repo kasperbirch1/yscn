@@ -80,7 +80,13 @@ const ContactForm = () => {
                 placeholder="Enter your email"
             />
             <label htmlFor="message">Message</label>
-            <textarea name="message" id="message" placeholder="Enter your message" cols="30" rows="10"></textarea>
+            <textarea
+                id="message"
+                name="message"
+                onChange={handleChange}
+                value={formState.message}
+                placeholder="Enter your message"
+                cols="30" rows="10"></textarea>
 
             <button type="submit">Submit</button>
         </StyledContactForm>
