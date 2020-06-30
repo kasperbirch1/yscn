@@ -131,7 +131,7 @@ const MenuLinks = styled.nav`
       a {
         letter-spacing: .25rem;
         font-family: Rozha One;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         text-transform: uppercase;
         text-decoration: none;
         color: white;

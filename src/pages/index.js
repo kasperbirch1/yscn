@@ -1,17 +1,21 @@
 import React from "react"
 import SEO from "../components/seo"
 import InstagramCoverflowEffect from '../components/InstagramCoverflowEffect/InstagramCoverflowEffect'
-import FrontpageText from '../components/FrontpageText/FrontpageText'
-// import video from '../images/yscn-mobile.mp4'
+import FrontpageText from '../components/Frontpage/FrontpageText'
+import FrontpageImgTextBox from '../components/Frontpage/FrontpageImgTextBox'
+import FrontpageVideo from '../components/Frontpage/FrontpageVideo'
+import image2 from '../images/frontpage_02.jpg'
+import image1 from '../images/yscn-hero.jpg'
 
 const IndexPage = () => {
   return (
     <>
       <SEO title="Home" />
-      {/* <video style={{ width: '100%', display: 'block', overflow: 'hidden' }} autoPlay muted loop playsinline>
-        <source src={video} type="video/mp4" />
-      </video> */}
+      <FrontpageVideo />
       <FrontpageText />
+      <FrontpageImgTextBox img={image2} text="tap here to see the models" link="/yscn-models" />
+      <FrontpageText />
+      <FrontpageImgTextBox img={image1} text="tap here to see the make-up artist's" link="/makeup" />
       <InstagramCoverflowEffect />
     </>
   )
