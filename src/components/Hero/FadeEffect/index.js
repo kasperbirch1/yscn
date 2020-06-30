@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Swiper from 'react-id-swiper';
 import "swiper/css/swiper.css"
 import "./FadeEffect.css"
+import video from '../../../images/yscn-mobile.mp4'
 
 const FadeEffect = () => {
   const data = useStaticQuery(graphql`

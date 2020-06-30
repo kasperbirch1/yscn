@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { breakpoints } from "../../theme/breakpoints"
 import logoImg from '../../images/yscn-logo-black.png'
 
-
 const DesktopNavMenu = ({ menuLinks }) => {
   const [background, setBackground] = useState(false)
   const navRef = useRef()
@@ -39,7 +38,10 @@ const DesktopNavMenu = ({ menuLinks }) => {
           )
         })}
         <li>
-          <Link to="/yscn-models" >YSCN Models</Link>
+          <Link to="/shop" >Shop</Link>
+        </li>
+        <li>
+          <Link to="/yscn-models" >Models</Link>
         </li>
         <li>
           <Link to="/contact">Contact</Link>

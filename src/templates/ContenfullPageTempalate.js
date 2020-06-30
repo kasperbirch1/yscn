@@ -6,16 +6,21 @@ import styled from 'styled-components'
 const StyledArticle = styled.article`
   padding: 1rem;
   h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: bold;
     margin-bottom: .75rem;
+    text-align: center;
+    font-family: Rozha One;
   }
   h2 {
+    font-family: Rozha One;
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: .75rem;
   }
   p {
+    font-family: "times new roman";
+    /* font-family: Poppins; */
     margin-bottom: .5rem;
   }
   b {
@@ -26,7 +31,6 @@ const StyledArticle = styled.article`
     margin: 0 auto;
   }
 `
-
 
 const ContenfullPageTempalate = ({ data }) => {
   return (

@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components"
 import reset from "styled-reset"
 
 export const theme = {
-  colour: {
+  color: {
     black: "#000",
     white: "#fff",
     grey: {
@@ -99,12 +99,12 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
     font-family: ${({ theme }) => theme.font.sans};
     font-size: ${({ theme }) => theme.fontSize.lg};
-    color: ${({ theme }) => theme.colour.grey[900]};
+    color: ${({ theme }) => theme.color.grey[900]};
   }
   body {
     line-height: ${({ theme }) => theme.lineHeight.snug};
     letter-spacing: ${({ theme }) => theme.letterSpacing.wide};
-    background-color: ${({ theme }) => theme.colour.white};
+    background-color: ${({ theme }) => theme.color.white};
   }
 
   img {

@@ -4,7 +4,8 @@ import styled from "styled-components"
 import { breakpoints } from "../../theme/breakpoints"
 import { IoIosMenu } from 'react-icons/io'
 import { RiCloseLine } from 'react-icons/ri'
-// import logoImg from '../../images/yscn-logo-black.png'
+import { RiShoppingBagLine } from 'react-icons/ri'
+import logoImg from '../../images/yscn-logo-black.png'
 
 const MobileNavMenu = ({ menuLinks }) => {
   const [menuOpen, toggleMenuOpen] = useState(false)
@@ -29,15 +30,16 @@ const MobileNavMenu = ({ menuLinks }) => {
   return (
     <MenuBar background={background}>
       <MenuIconContainer>
+        <RiShoppingBagLine style={{ fontSize: '1.5rem', alignSelf: 'center' }} />
+        <img src={logoImg} alt="YSCN Logo" />
         {menuOpen ?
-          <RiCloseLine style={{ zIndex: '11', fontSize: '1.5rem', color: 'black' }} onClick={() => toggleMenuOpen(!menuOpen)} />
+          <RiCloseLine style={{ zIndex: '11', fontSize: '1.5rem', color: 'black', placeSelf: 'end', color: 'white' }} onClick={() => toggleMenuOpen(!menuOpen)} />
           :
-          <div style={{ display: 'flex', alignItems: 'center' }} onClick={() => toggleMenuOpen(!menuOpen)} onKeyDown={(e) => toggleMenuOpen(!menuOpen)} role="button" tabIndex={0} >
-            <IoIosMenu style={{ zIndex: '11', fontSize: '1.5rem' }} />
+          <div style={{ display: 'flex', alignItems: 'center', placeSelf: 'end', alignSelf: 'center' }} onClick={() => toggleMenuOpen(!menuOpen)} onKeyDown={(e) => toggleMenuOpen(!menuOpen)} role="button" tabIndex={0} >
             <span style={{ lineHeight: "1" }}>MENU</span>
+            <IoIosMenu style={{ zIndex: '11', fontSize: '1.5rem' }} />
           </div>
         }
-        {/* <img src={logoImg} alt="YSCN Logo" /> */}
       </MenuIconContainer>
       <MenuLinks menuOpen={menuOpen}>
         <ul>
@@ -52,7 +54,10 @@ const MobileNavMenu = ({ menuLinks }) => {
             )
           })}
           <li>
-            <Link to="/yscn-models" onClick={() => toggleMenuOpen(!menuOpen)}>YSCN Models</Link>
+            <Link to="/shop" onClick={() => toggleMenuOpen(!menuOpen)}>Shop</Link>
+          </li>
+          <li>
+            <Link to="/yscn-models" onClick={() => toggleMenuOpen(!menuOpen)}>Models</Link>
           </li>
           <li>
             <Link to="/contact" onClick={() => toggleMenuOpen(!menuOpen)}>Contact</Link>
@@ -84,7 +89,7 @@ const MenuIconContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  padding: .5rem;
+  padding: 1rem;
 
   img {
     justify-self: center;
@@ -100,7 +105,7 @@ const MenuLinks = styled.nav`
   display: grid;
   place-content: center;
   align-items: center;
-  background: white;
+  background: black;
   height: 100vh;
   width: 100%;
   transition: transform 300ms;
@@ -120,12 +125,16 @@ const MenuLinks = styled.nav`
       display: block;
       text-align: center;
       width: 100%;
-
+      border: .25rem solid white;
+      margin-bottom: .5rem;
+      padding: .5rem 2rem;
       a {
-        font-size: 2rem;
+        letter-spacing: .25rem;
+        font-family: Rozha One;
+        font-size: 1.5rem;
         text-transform: uppercase;
         text-decoration: none;
-        color: black;
+        color: white;
       }
     }
   }
