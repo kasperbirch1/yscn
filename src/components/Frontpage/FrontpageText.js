@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 const StyledSection = styled.section`
     font-family: Limelight;
+    font-family: Italianno;
     padding: 1rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
   
 `
