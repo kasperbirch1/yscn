@@ -1,9 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 
-
 const FrontpageVideo = () => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
         contentfulAsset(title: {eq: "yscn-mobile"}) {
           title
@@ -13,15 +12,15 @@ const FrontpageVideo = () => {
         }
       }
       `)
-    console.log("FrontpageVideo", data.contentfulAsset.file.url);
+  console.log("FrontpageVideo", data.contentfulAsset.file.url);
 
-    return (
-        <>
-            <video style={{ width: '100%', display: 'block', overflow: 'hidden' }} autoPlay muted loop playsinline>
-                <source src={data.contentfulAsset.file.url} type="video/mp4" />
-            </video>
-        </>
-    )
+  return (
+    <>
+      <video autoplay loop muted playsinline style={{ width: '100%', display: 'block', overflow: 'hidden' }} >
+        <source src={data.contentfulAsset.file.url} type="video/mp4" />
+      </video>
+    </>
+  )
 }
 
 export default FrontpageVideo

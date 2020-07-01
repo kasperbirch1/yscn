@@ -6,6 +6,7 @@ const StyledSection = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
     padding: 25rem 2rem 5rem;
+    margin-bottom: .5rem;
     a{
         h2 {
             text-transform: uppercase;
