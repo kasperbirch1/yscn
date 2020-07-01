@@ -16,7 +16,7 @@ const FrontpageVideo = () => {
 
   return (
     <>
-      <video playsinline autoplay="true" muted="muted" loop="loop" style={{ width: '100%', display: 'block', overflow: 'hidden' }} >
+      <video playsInline autoplay="true" muted="muted" loop="loop" style={{ width: '100%', display: 'block', overflow: 'hidden' }} >
         <source src={data.contentfulAsset.file.url} type="video/mp4" />
       </video>
     </>
