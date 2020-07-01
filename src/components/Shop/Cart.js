@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useShoppingCart } from 'use-shopping-cart'
+import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
 
 const Cart = () => {
     const [status, setStatus] = useState('idle')
@@ -24,12 +24,12 @@ const Cart = () => {
             {status === 'redirect-error' && (
                 <p>Unable to redirect to Stripe checkout page.</p>
             )}
-            <details>
-                <summary>Cart Details ({cartCount} products) TotalPrice: {totalPrice}</summary>
+            <details style={{ marginBottom: '2rem' }}>
+                <summary>Cart Details ({cartCount}) TotalPrice: {`${totalPrice / 100} kr.`}</summary>
                 <ul>
                     {Object.values(cartDetails).map(product => {
                         return (
-                            <li key={product.sku}>{product.name} ({product.quantity}) - {product.formattedValue}</li>
+                            <li key={product.name}>{product.name} ({product.quantity}) - {product.formattedValue}</li>
                         )
                     })}
                 </ul>

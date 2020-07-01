@@ -29,9 +29,9 @@ const AllProducts = () => {
     return (
         <ul>
             {
-                data.allStripeProduct.nodes.map(product => {
+                products.map(product => {
                     return (
-                        <li key={product.id}><Product product={product} /></li>
+                        <li key={product.sku}><Product product={product} /></li>
                     )
                 })
             }
