@@ -31,7 +31,7 @@ const AllProducts = () => {
             {
                 data.allStripeProduct.nodes.map(product => {
                     return (
-                        <li><Product product={product} /></li>
+                        <li key={product.id}><Product product={product} /></li>
                     )
                 })
             }

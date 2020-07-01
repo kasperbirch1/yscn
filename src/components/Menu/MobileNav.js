@@ -33,7 +33,7 @@ const MobileNavMenu = ({ menuLinks }) => {
         <RiShoppingBagLine style={{ fontSize: '1.5rem', alignSelf: 'center' }} />
         <img src={logoImg} alt="YSCN Logo" />
         {menuOpen ?
-          <RiCloseLine style={{ zIndex: '11', fontSize: '1.5rem', color: 'black', placeSelf: 'end', color: 'white' }} onClick={() => toggleMenuOpen(!menuOpen)} />
+          <RiCloseLine style={{ zIndex: '11', fontSize: '1.5rem', placeSelf: 'end', color: 'white' }} onClick={() => toggleMenuOpen(!menuOpen)} />
           :
           <div style={{ display: 'flex', alignItems: 'center', placeSelf: 'end', alignSelf: 'center' }} onClick={() => toggleMenuOpen(!menuOpen)} onKeyDown={(e) => toggleMenuOpen(!menuOpen)} role="button" tabIndex={0} >
             <span style={{ lineHeight: "1" }}>MENU</span>
