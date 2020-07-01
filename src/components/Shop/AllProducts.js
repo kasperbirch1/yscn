@@ -1,4 +1,5 @@
 import React from 'react'
+import { useStaticQuery, graphql } from "gatsby"
 import Product from '../Shop/Product'
 
 const products = [
@@ -12,10 +13,23 @@ const products = [
 ]
 
 const AllProducts = () => {
+    const data = useStaticQuery(graphql`
+    query {
+        allStripeProduct {
+          nodes {
+            id
+            name
+            description
+            images
+          }
+        }
+      }`)
+    console.log("AllProducts", data.allStripeProduct.nodes);
+
     return (
         <ul>
             {
-                products.map(product => {
+                data.allStripeProduct.nodes.map(product => {
                     return (
                         <li><Product product={product} /></li>
                     )
