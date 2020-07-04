@@ -5,7 +5,7 @@ import AllProducts from '../components/Shop/AllProducts'
 import Cart from '../components/Shop/Cart'
 
 // Remember to add your public Stripe key
-const stripePromise = loadStripe("pk_test_51Gw560IgQIWhgcN3J5FrTkHJnD3ak5wF2KYZ06A8qpgmoi2EOiziTH4ZjocQyQvDDXPx7B629ulxWphqlP0MoVZj00mmnAJKBM")
+const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY)
 
 const shop = () => {
     return (
