@@ -6,9 +6,11 @@ import { IoIosMenu } from 'react-icons/io'
 import { RiCloseLine } from 'react-icons/ri'
 import { RiShoppingBagLine } from 'react-icons/ri'
 import logoImg from '../../images/yscn-logo-black.png'
+import Cart from '../Shop/Cart'
 
 const MobileNavMenu = ({ menuLinks }) => {
   const [menuOpen, toggleMenuOpen] = useState(false)
+  const [CartOpen, toggleCartOpen] = useState(false)
   const [background, setBackground] = useState(false)
   const navRef = useRef()
 
@@ -28,9 +30,9 @@ const MobileNavMenu = ({ menuLinks }) => {
   }, [])
 
   return (
-    <MenuBar background={background}>
-      <MenuIconContainer>
-        <RiShoppingBagLine style={{ fontSize: '1.5rem', alignSelf: 'center' }} />
+    <MenuWrapperNav background={background}>
+      <MenuHeaderContainer>
+        <RiShoppingBagLine style={{ zIndex: '11', fontSize: '1.5rem', alignSelf: 'center' }} onClick={() => toggleCartOpen(!CartOpen)} />
         <img src={logoImg} alt="YSCN Logo" />
         {menuOpen ?
           <RiCloseLine style={{ zIndex: '11', fontSize: '1.5rem', placeSelf: 'end', color: 'white' }} onClick={() => toggleMenuOpen(!menuOpen)} />
@@ -40,8 +42,8 @@ const MobileNavMenu = ({ menuLinks }) => {
             <IoIosMenu style={{ zIndex: '11', fontSize: '1.5rem' }} />
           </div>
         }
-      </MenuIconContainer>
-      <MenuLinks menuOpen={menuOpen}>
+      </MenuHeaderContainer>
+      <MenuLinksContainer menuOpen={menuOpen}>
         <ul>
           <li>
             <Link to="/" onClick={() => toggleMenuOpen(!menuOpen)}>Home</Link>
@@ -63,14 +65,18 @@ const MobileNavMenu = ({ menuLinks }) => {
             <Link to="/contact" onClick={() => toggleMenuOpen(!menuOpen)}>Contact</Link>
           </li>
         </ul>
-      </MenuLinks>
-    </MenuBar>
+      </MenuLinksContainer>
+      <CartContainer CartOpen={CartOpen}>
+        <h1>cart</h1>
+        <Cart />
+      </CartContainer>
+    </MenuWrapperNav>
   )
 }
 
 export default MobileNavMenu
 
-const MenuBar = styled.nav`
+const MenuWrapperNav = styled.nav`
   @media ${breakpoints.sm} {
     display: none;
   }
@@ -83,7 +89,7 @@ const MenuBar = styled.nav`
   align-items: center;
 `
 
-const MenuIconContainer = styled.div`
+const MenuHeaderContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   display: grid;
@@ -97,7 +103,7 @@ const MenuIconContainer = styled.div`
   }
 `
 
-const MenuLinks = styled.nav`
+const MenuLinksContainer = styled.nav`
   position: absolute;
   top: 0;
   right: 0;
@@ -138,4 +144,19 @@ const MenuLinks = styled.nav`
       }
     }
   }
+`
+const CartContainer = styled.section`
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  display: grid;
+  place-content: center;
+  align-items: center;
+  background: black;
+  height: 100vh;
+  width: 100%;
+  transition: transform 300ms;
+  transform: ${({ CartOpen }) =>
+    CartOpen ? "translateX(0)" : "translateX(-100%)"};
 `
