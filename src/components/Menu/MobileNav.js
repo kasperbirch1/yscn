@@ -150,9 +150,6 @@ const CartContainer = styled.section`
   top: 0;
   right: 0;
   z-index: 5;
-  display: grid;
-  place-content: center;
-  align-items: center;
   background: black;
   height: 100vh;
   width: 100%;

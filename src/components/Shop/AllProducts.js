@@ -4,7 +4,7 @@ import Product from '../Shop/Product'
 import styled from 'styled-components'
 const StyledUl = styled.ul`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-gap: 1rem;
 `
 
