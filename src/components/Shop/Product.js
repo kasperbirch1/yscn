@@ -6,17 +6,22 @@ const StyledArticle = styled.article`
         font-weight: bold;
     }
     button {
+        height: 3rem;
+        text-transform: uppercase;
         display: block;
         width: 100%;
         padding: .5rem;
-        font-weight: bold;
+        margin: .5rem 0;
+        border: 1px solid black;
+        text-align: center;
+        background-color: transparent;
     }
 `
 
 
 const Product = ({ product }) => {
     const { addItem } = useShoppingCart()
-    // console.log("product", product);
+    console.log("product", product);
     return (
         <StyledArticle>
             <img src={product.image} alt={product.name} />

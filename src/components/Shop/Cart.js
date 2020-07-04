@@ -20,6 +20,17 @@ const StyledCart = styled.article`
             grid-template-columns: 3fr 1fr;
         }
     }
+    button {
+        height: 3rem;
+        text-transform: uppercase;
+        display: block;
+        width: 100%;
+        padding: .5rem;
+        margin: .5rem 0;
+        border: 1px solid black;
+        text-align: center;
+        background-color: transparent;
+    }
 `
 
 const Cart = () => {
