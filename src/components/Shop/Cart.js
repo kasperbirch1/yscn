@@ -17,7 +17,7 @@ const Cart = () => {
     }
     return (
         <>
-            <pre>{JSON.stringify({ cartDetails }, null, 2)}</pre>
+            {/* <pre>{JSON.stringify({ cartDetails }, null, 2)}</pre> */}
             {status === 'missing-items' && (
                 <p>missing-items</p>
             )}

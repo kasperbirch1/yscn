@@ -1,23 +1,12 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import Product from '../Shop/Product'
-
-const products = [
-    {
-        name: 'Non naked long',
-        sku: 'price_1Gw5NjIgQIWhgcN3yx9x8kX9',
-        price: 149900,
-        image: "https://files.stripe.com/links/fl_test_HqKYN71IJahk6wCrgvgxjDTB",
-        currency: 'dkk'
-    },
-    {
-        name: "Ocean wiew",
-        sku: "price_1H0EJmIgQIWhgcN3fYt7p1y5",
-        price: 139900,
-        image: "https://files.stripe.com/links/fl_test_Z8zXzHCrzO9TJYxpyjAGftRS",
-        currency: "dkk"
-    }
-]
+import styled from 'styled-components'
+const StyledUl = styled.ul`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+`
 
 const AllProducts = () => {
     const data = useStaticQuery(graphql`
@@ -48,10 +37,10 @@ const AllProducts = () => {
             }
         )
     })
-    console.log("testarray", testarray);
+    // console.log("testarray", testarray);
 
     return (
-        <ul>
+        <StyledUl>
             {
                 testarray.map((product) => {
                     return (
@@ -59,7 +48,7 @@ const AllProducts = () => {
                     )
                 })
             }
-        </ul>
+        </StyledUl>
     )
 }
 
