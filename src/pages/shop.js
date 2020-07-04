@@ -7,8 +7,8 @@ import Cart from '../components/Shop/Cart'
 const shop = () => {
     return (
         <>
-            <Cart />
             <AllProducts />
+            <Cart />
         </>
     )
 }

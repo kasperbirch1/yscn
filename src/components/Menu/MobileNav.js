@@ -32,14 +32,14 @@ const MobileNavMenu = ({ menuLinks }) => {
   return (
     <MenuWrapperNav background={background}>
       <MenuHeaderContainer>
-        <RiShoppingBagLine style={{ zIndex: '11', fontSize: '1.5rem', alignSelf: 'center' }} onClick={() => toggleCartOpen(!CartOpen)} />
+        <RiShoppingBagLine style={{ zIndex: '20', fontSize: '1.5rem', alignSelf: 'center' }} onClick={() => toggleCartOpen(!CartOpen)} />
         <img src={logoImg} alt="YSCN Logo" />
         {menuOpen ?
-          <RiCloseLine style={{ zIndex: '11', fontSize: '1.5rem', placeSelf: 'end', color: 'white' }} onClick={() => toggleMenuOpen(!menuOpen)} />
+          <RiCloseLine style={{ zIndex: '10', fontSize: '1.5rem', placeSelf: 'end', alignSelf: 'center', color: 'white' }} onClick={() => toggleMenuOpen(!menuOpen)} />
           :
           <div style={{ display: 'flex', alignItems: 'center', placeSelf: 'end', alignSelf: 'center' }} onClick={() => toggleMenuOpen(!menuOpen)} onKeyDown={(e) => toggleMenuOpen(!menuOpen)} role="button" tabIndex={0} >
             <span style={{ lineHeight: "1" }}>MENU</span>
-            <IoIosMenu style={{ zIndex: '11', fontSize: '1.5rem' }} />
+            <IoIosMenu style={{ zIndex: '10', fontSize: '1.5rem' }} />
           </div>
         }
       </MenuHeaderContainer>
@@ -67,7 +67,6 @@ const MobileNavMenu = ({ menuLinks }) => {
         </ul>
       </MenuLinksContainer>
       <CartContainer CartOpen={CartOpen}>
-        <h1>cart</h1>
         <Cart />
       </CartContainer>
     </MenuWrapperNav>
@@ -146,10 +145,11 @@ const MenuLinksContainer = styled.nav`
   }
 `
 const CartContainer = styled.section`
+  padding-top: 2rem;
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 5;
+  z-index: 15;
   background: black;
   height: 100vh;
   width: 100%;

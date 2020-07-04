@@ -3,9 +3,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import Product from '../Shop/Product'
 import styled from 'styled-components'
 const StyledUl = styled.ul`
+    padding: .5rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 1rem;
+    grid-gap: .5rem;
 `
 
 const AllProducts = () => {
