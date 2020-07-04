@@ -6,13 +6,15 @@ const StyledSection = styled.section`
     padding: 1rem;
     font-size: 2.5rem;
     text-align: center;
-  
+    :first-letter {
+        text-transform: uppercase;
+    }
 `
 
-const FrontpageText = () => {
+const FrontpageText = ({ text }) => {
     return (
         <StyledSection >
-            <h2>Every woman is beautiful in their own way</h2>
+            <h2>{text}</h2>
         </StyledSection>
     )
 }

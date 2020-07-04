@@ -2,6 +2,8 @@ import React from 'react'
 import { useShoppingCart } from 'use-shopping-cart'
 
 const Product = ({ product }) => {
+    // console.log("product", product);
+
     const { addItem } = useShoppingCart()
     return (
         <article>

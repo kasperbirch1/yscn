@@ -13,9 +13,11 @@ const IndexPage = () => {
     <>
       <SEO title="Home" />
       <FrontpageVideo />
-      <FrontpageText />
-      <img style={{ marginBottom: '.5rem' }} src={image1} alt="yscn" />
+      <FrontpageText text="Every woman is beautiful in their own way" />
+      <img src={image1} alt="yscn" />
+      <FrontpageText text="here is another text" />
       <FrontpageImgTextBox img={image2} text="tap here to see the models" link="/yscn-models" />
+      <FrontpageText text="here is another text" />
       <FrontpageImgTextBox img={image3} text="tap here to see the make-up artist's" link="/makeup" />
       <InstagramCoverflowEffect />
     </>
